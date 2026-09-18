@@ -24,12 +24,14 @@ const menu_data: DataType[] = [
 	},
 	{
 		id: 4,
-		title: "Projects",
-		link: "#",
+		title: "Sole Types",
+		link: "/single-project?id=1",
 		has_dropdown: true,
 		sub_menus: [
-			{ link: "/projects", title: "Projects List" },
-			{ link: "/single-project", title: "Single Portfolio" },
+			{ link: "/single-project?id=1", title: "SOLE Pro Max (Carbon-Fiber)" },
+			{ link: "/single-project?id=2", title: "SOLE Classic (Gum Rubber)" },
+			{ link: "/single-project?id=3", title: "Apex Trail 360 (Outdoor)" },
+			{ link: "/single-project?id=4", title: "EcoBio Matrix (Recycled)" },
 		],
 	},
 	{
