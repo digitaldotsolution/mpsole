@@ -19,7 +19,7 @@ export default function BlogArea() {
             <div key={sole.id} className="row blog-post-box align-items-center mb-50">
               <div className={`col-lg-6 ${index % 2 === 1 ? 'order-lg-2' : ''}`}>
                 <div className="blog-post-img" style={{ borderRadius: '16px', overflow: 'hidden', backgroundColor: '#09090b', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <Link href={`/single-project?id=${sole.id}`}>
+                  <Link href={`/sole-types/${sole.slug}`}>
                     <img
                       src={sole.image}
                       alt={sole.title}
@@ -27,7 +27,7 @@ export default function BlogArea() {
                     />
                   </Link>
                   <div className="blog-post-category">
-                    <Link href={`/single-project?id=${sole.id}`}>{sole.category}</Link>
+                    <Link href={`/sole-types/${sole.slug}`}>{sole.category}</Link>
                   </div>
                 </div>
               </div>
@@ -37,14 +37,14 @@ export default function BlogArea() {
                     {sole.specs}
                   </h3>
                   <h2>
-                    <Link className="link-decoration" href={`/single-project?id=${sole.id}`}>
+                    <Link className="link-decoration" href={`/sole-types/${sole.slug}`}>
                       {sole.title}
                     </Link>
                   </h2>
                   <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '1.6', margin: '14px 0 20px' }}>
                     {sole.desc}
                   </p>
-                  <Link className="theme-btn theme-btn-two" href={`/single-project?id=${sole.id}`}>
+                  <Link className="theme-btn theme-btn-two" href={`/sole-types/${sole.slug}`}>
                     View Full Specifications <i className="ri-arrow-right-line"></i>
                   </Link>
                 </div>

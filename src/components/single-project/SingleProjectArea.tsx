@@ -54,7 +54,7 @@ export default function SingleProjectArea({ sole }: Props) {
               {SOLE_TYPES_DATA.map((item) => (
                 <Link
                   key={item.id}
-                  href={`/single-project?id=${item.id}`}
+                  href={`/sole-types/${item.slug}`}
                   style={{
                     padding: '8px 18px',
                     borderRadius: '24px',
