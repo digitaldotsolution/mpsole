@@ -19,7 +19,7 @@ const menu_data: DataType[] = [
 	{
 		id: 2,
 		title: "About",
-		link: "/about",
+		link: "/#about",
 		has_dropdown: false,
 	},
 	{
