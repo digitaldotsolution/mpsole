@@ -4,7 +4,7 @@ import React from 'react'
 export default function ResumeArea() {
   return (
     <>
-      <div className="resume-area no-padding" id="resume">
+      <div className="resume-area" id="resume" style={{ paddingTop: '0px', paddingBottom: '40px' }}>
         <div className="container">
           <div className="row">
             <div className="col-xl-6 col-md-6">

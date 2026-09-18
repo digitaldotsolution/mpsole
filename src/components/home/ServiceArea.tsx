@@ -4,7 +4,7 @@ import React from 'react'
 export default function ServiceArea() {
   return (
     <>
-      <section id="services" className="services-area">
+      <section id="services" className="services-area" style={{ paddingBottom: '0px' }}>
         <div className="container">
           <div className="row">
             <div className="col-xl-12 col-lg-12">
