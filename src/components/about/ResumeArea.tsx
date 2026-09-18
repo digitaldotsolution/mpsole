@@ -12,25 +12,16 @@ export default function ResumeArea() {
 
                 <div className="resume-box">
                   <span className="resume-date">2020 - Present</span>
-                  <h2>Web Developer & Business Partner (Full-Time)</h2>
-                  <span>@ Envato Marketplace</span>
-                  <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <h2>High-Volume Automated Injection Molding</h2>
+                  <span>@ Primary Compounding Facility</span>
+                  <p>State-of-the-art multi-station dual-color hydraulic injection and compression presses capable of 500,000+ pairs monthly with zero compound shrinkage defect.</p>
                 </div>
 
-
                 <div className="resume-box">
-                  <span className="resume-date">2018 - 2020</span>
-                  <h2>CEO & Founder</h2>
-                  <span>@ Thememaster LTD</span>
-                  <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-
-                <div className="resume-box">
-                  <span className="resume-date">2012 - 2028</span>
-                  <h2>Senior Designer</h2>
-                  <span>@ Google</span>
-                  <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <span className="resume-date">2018 - Present</span>
+                  <h2>Aerospace 3K Carbon Plate Integration</h2>
+                  <span>@ Advanced Composites Lab</span>
+                  <p>Specialized vacuum autoclave consolidation for marathon race outsoles, delivering up to 88% kinetic propulsion rebound with ultra-light structural rigidity.</p>
                 </div>
 
               </div>
@@ -39,26 +30,17 @@ export default function ResumeArea() {
               <div className="resume-wrapper wow fadeInUp delay-0-4s">
 
                 <div className="resume-box">
-                  <span className="resume-date">2020 - Present</span>
-                  <h2>Bachelor Degree of Science</h2>
-                  <span>@ University of London</span>
-                  <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <span className="resume-date">2015 - Present</span>
+                  <h2>5-Axis CNC Steel & Aluminum Mold Tooling</h2>
+                  <span>@ Precision Tooling Studio</span>
+                  <p>In-house computerized CNC mold milling with 0.02mm tolerance for intricate multi-directional outsole tread geometries and deep mud-clearing lugs.</p>
                 </div>
 
-
                 <div className="resume-box">
-                  <span className="resume-date">2018 - 2020</span>
-                  <h2>Master Degree of Design</h2>
-                  <span>@ Envato Education</span>
-                  <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-
-                <div className="resume-box">
-                  <span className="resume-date">2015 - 2018</span>
-                  <h2>Degree Of UI & UX</h2>
-                  <span>@ University of world</span>
-                  <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <span className="resume-date">ISO 9001:2015</span>
+                  <h2>Shore Durometer & Flex Fatigue Testing</h2>
+                  <span>@ Quality Assurance Division</span>
+                  <p>Rigorous mechanical lab validation covering 200,000+ continuous flex cycles, DIN abrasion testing, and SATRA slip-resistance coefficient verification.</p>
                 </div>
 
               </div>

@@ -4,6 +4,7 @@ import HeroArea from './HeroArea'
 import ShoeSoleScroller from './ShoeSoleScroller'
 import BrandArea from './BrandArea'
 import AboutArea from './AboutArea'
+import ResumeArea from '@/components/about/ResumeArea'
 import ServiceArea from './ServiceArea'
 import HeaderOne from '@/layouts/headers/HeaderOne'
 import PortfolioArea from './PortfolioArea'
@@ -22,6 +23,7 @@ export default function Home() {
             <HeroArea />
             <ShoeSoleScroller />
             <AboutArea />
+            <ResumeArea />
             <ServiceArea />
             <BlogArea />
             <TestimonoalArea />
