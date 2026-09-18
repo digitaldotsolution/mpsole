@@ -75,72 +75,134 @@ export default function SingleProjectArea({ sole }: Props) {
 
         {/* Technical Specs & Details */}
         <div className="container pt-60 pb-40">
-          <div className="row">
+          <div className="row g-4">
             {/* Sidebar Specifications */}
             <div className="col-lg-4">
-              <div className="single-project-page-left wow fadeInUp delay-0-2s" style={{ background: 'var(--lighter-color)', padding: '36px 30px', borderRadius: '16px' }}>
-                <div className="single-info mb-20">
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1px', color: '#c8a87a', marginBottom: '4px' }}>Category</p>
-                  <h3 style={{ fontSize: '18px', margin: 0 }}>{sole.category}</h3>
+              <div
+                className="single-project-page-left wow fadeInUp delay-0-2s"
+                style={{
+                  background: 'linear-gradient(160deg, #16161b 0%, #0d0d10 100%)',
+                  padding: '36px 30px',
+                  borderRadius: '18px',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#c8a87a', display: 'inline-block' }}></span>
+                  <span style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '2px', color: '#c8a87a', fontWeight: 700 }}>
+                    Technical Specifications
+                  </span>
                 </div>
-                <div className="single-info mb-20">
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1px', color: '#c8a87a', marginBottom: '4px' }}>Hardness / Durometer</p>
-                  <h3 style={{ fontSize: '16px', margin: 0 }}>{sole.durometer}</h3>
+
+                <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Category</p>
+                  <h3 style={{ fontSize: '18px', margin: 0, color: '#ffffff', fontWeight: 600 }}>{sole.category}</h3>
                 </div>
-                <div className="single-info mb-20">
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1px', color: '#c8a87a', marginBottom: '4px' }}>Compounding Matrix</p>
-                  <h3 style={{ fontSize: '15px', margin: 0 }}>{sole.material}</h3>
+
+                <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Hardness / Durometer</p>
+                  <h3 style={{ fontSize: '16px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.durometer}</h3>
                 </div>
-                <div className="single-info mb-20">
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1px', color: '#c8a87a', marginBottom: '4px' }}>Kinetic Rebound</p>
-                  <h3 style={{ fontSize: '16px', margin: 0 }}>{sole.energyRebound}</h3>
+
+                <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Compounding Matrix</p>
+                  <h3 style={{ fontSize: '15px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.material}</h3>
                 </div>
-                <div className="single-info mb-20">
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1px', color: '#c8a87a', marginBottom: '4px' }}>Production MOQ</p>
-                  <h3 style={{ fontSize: '16px', margin: 0 }}>{sole.moq}</h3>
+
+                <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Kinetic Rebound</p>
+                  <h3 style={{ fontSize: '16px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.energyRebound}</h3>
                 </div>
-                <div className="single-info">
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1px', color: '#c8a87a', marginBottom: '4px' }}>Tooling Lead Time</p>
-                  <h3 style={{ fontSize: '16px', margin: 0 }}>{sole.leadTime}</h3>
+
+                <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Production MOQ</p>
+                  <h3 style={{ fontSize: '16px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.moq}</h3>
+                </div>
+
+                <div className="single-info mb-20">
+                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Tooling Lead Time</p>
+                  <h3 style={{ fontSize: '16px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.leadTime}</h3>
+                </div>
+
+                <div style={{ paddingTop: '10px' }}>
+                  <a
+                    className="theme-btn"
+                    href="/#contact"
+                    style={{ width: '100%', textAlign: 'center', display: 'block', padding: '12px 18px', fontSize: '13px' }}
+                  >
+                    Inquire For This Sole
+                  </a>
                 </div>
               </div>
             </div>
 
             {/* Right Column Description */}
             <div className="col-lg-8">
-              <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ paddingLeft: '15px' }}>
-                <span style={{ display: 'inline-block', background: 'rgba(200, 168, 122, 0.15)', color: '#c8a87a', padding: '6px 14px', borderRadius: '20px', fontSize: '12px', fontWeight: 600, letterSpacing: '1px', marginBottom: '14px' }}>
+              <div className="single-project-page-right wow fadeInUp delay-0-4s" style={{ paddingLeft: '10px' }}>
+                <span
+                  style={{
+                    display: 'inline-block',
+                    background: 'rgba(200, 168, 122, 0.12)',
+                    color: '#c8a87a',
+                    border: '1px solid rgba(200, 168, 122, 0.3)',
+                    padding: '6px 16px',
+                    borderRadius: '20px',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    letterSpacing: '1.5px',
+                    textTransform: 'uppercase',
+                    marginBottom: '16px',
+                  }}
+                >
                   {sole.specs}
                 </span>
-                <h2 style={{ fontSize: '32px', lineHeight: '1.25', marginBottom: '20px' }}>
+
+                <h2 style={{ fontSize: '34px', lineHeight: '1.25', marginBottom: '22px', color: '#ffffff', fontWeight: 700 }}>
                   {sole.title}
                 </h2>
-                <p style={{ fontSize: '16px', lineHeight: '1.7', color: 'rgba(255,255,255,0.85)', marginBottom: '18px' }}>
+
+                <p style={{ fontSize: '17px', lineHeight: '1.75', color: 'rgba(255,255,255,0.9)', marginBottom: '18px' }}>
                   {sole.desc}
                 </p>
-                <p style={{ fontSize: '15px', lineHeight: '1.7', color: 'rgba(255,255,255,0.7)', marginBottom: '28px' }}>
+
+                <p style={{ fontSize: '15px', lineHeight: '1.75', color: 'rgba(255,255,255,0.7)', marginBottom: '32px' }}>
                   {sole.detailedDesc}
                 </p>
 
                 {/* Key Engineering Features */}
-                <h4 style={{ fontSize: '18px', marginBottom: '16px', color: '#c8a87a', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                <h4 style={{ fontSize: '18px', marginBottom: '18px', color: '#c8a87a', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600 }}>
                   Engineering Highlights:
                 </h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 32px 0' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginBottom: '36px' }}>
                   {sole.features.map((feature, idx) => (
-                    <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', fontSize: '15px', color: 'rgba(255,255,255,0.85)' }}>
-                      <i className="ri-checkbox-circle-fill" style={{ color: '#c8a87a', fontSize: '18px' }}></i>
-                      {feature}
-                    </li>
+                    <div
+                      key={idx}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        background: 'rgba(255, 255, 255, 0.04)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
+                        padding: '14px 18px',
+                        borderRadius: '10px',
+                        fontSize: '14px',
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        fontWeight: 500,
+                      }}
+                    >
+                      <i className="ri-checkbox-circle-fill" style={{ color: '#c8a87a', fontSize: '18px', flexShrink: 0 }}></i>
+                      <span>{feature}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
                 <div className="d-flex flex-wrap gap-3">
                   <a className="theme-btn" href="/#contact">
                     Request Mold Sample & RFQ <i className="ri-arrow-right-line"></i>
                   </a>
                   <a className="theme-btn theme-btn-two" href="/#sole-types">
-                    View All Soles
+                    View All Sole Types
                   </a>
                 </div>
               </div>

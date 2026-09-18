@@ -421,52 +421,55 @@ html {
 }
 
 .theme-btn {
-    background: var(--main-color);
-    color: var(--white-color);
+    background: #18181c;
+    color: #ffffff !important;
     cursor: pointer;
     display: inline-block;
-    border: 1px solid var(--button-border);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 20px;
     margin: 0 5px 10px 0;
     overflow: visible;
-    border-radius: 2px;
-    padding: 20px 34px;
+    border-radius: 6px;
+    padding: 16px 30px;
     text-align: center;
     text-transform: none;
-    -webkit-transition: .3s;
-    transition: .3s
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
 }
 
 .theme-btn-two {
-    background: var(--primary-color);
-    color: var(--black-color);
-
+    background: #c8a87a;
+    color: #070707 !important;
+    border-color: #c8a87a;
 }
 
 .theme-btn:focus {
     text-decoration: none;
-    -webkit-transition: .3s;
-    transition: .3s
+    outline: none;
 }
 
 .theme-btn i {
-    margin-left: 4px;
+    margin-left: 6px;
 }
 
 .theme-btn:hover {
-    border: 1px solid var(--button-border);
+    border: 1px solid #c8a87a;
     text-decoration: none;
-    color: var(--main-color);
-    -webkit-transition: .3s;
-    transition: .3s;
-    background: transparent;
+    color: #070707 !important;
+    background: #c8a87a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(200, 168, 122, 0.3);
 }
+
 .theme-btn-two:hover {
-    border: 1px solid var(--body-color);
+    border: 1px solid #ffffff;
     text-decoration: none;
-    color: var(--heading-color);
+    color: #070707 !important;
+    background: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 
 .theme-btn:active {
@@ -912,17 +915,19 @@ html {
     position: absolute;
     right: 0;
     top: 110%;
-    min-width: 180px;
-    background-color: var(--black-color);
+    min-width: 220px;
+    background-color: #0c0c0c;
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     visibility: hidden;
     z-index: 99;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.16);
-    padding: 20px 0px 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 8px 0;
     -webkit-transition: 0.3s;
     transition: 0.3s;
-    border-top: 2px solid #000;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .main-menu ul li .sub-menu li {
@@ -935,26 +940,27 @@ html {
 }
 
 .main-menu ul li .sub-menu li a {
-
     display: block;
-    padding: 5px 25px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    padding: 9px 20px;
     text-align: left;
     font-size: 13px;
     line-height: 20px;
-    font-weight: 400;
-    transition: 0.3s;
+    font-weight: 500;
     text-transform: uppercase;
-    color: var(--heading-color);
+    color: rgba(255, 255, 255, 0.72);
+    transition: all 0.25s ease;
 }
 
 .main-menu ul li .sub-menu li .active {
-    color: var(--primary-color);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.main-menu ul li .sub-menu li:hover>a {
-    color: var(--primary-color);
+.main-menu ul li .sub-menu li:hover>a,
+.main-menu ul li .sub-menu li a:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding-left: 26px;
 }
 
 .main-menu ul li .sub-menu li>.sub-menu {
@@ -2512,6 +2518,8 @@ ul.extra-skills li i {
 */
 .main-footer {
     background: var(--primary-color);
+    padding-top: 60px;
+    padding-bottom: 50px;
 }
 
 .footer-bottom {}
@@ -2535,12 +2543,15 @@ p.copy-right-text {
 }
 
 .footer-top h2 {
-    color: var(--main-color);
-    font-size: 180px;
-    line-height: 1em;
-    font-weight: 700;
+    color: var(--main-color) !important;
+    font-size: clamp(38px, 8vw, 100px) !important;
+    line-height: 1.05em !important;
+    font-weight: 800 !important;
     text-transform: uppercase;
     text-align: center;
+    letter-spacing: -0.5px;
+    margin: 0 0 24px 0 !important;
+    word-break: break-word;
 }
 
 .footer-top{
@@ -3501,5 +3512,11 @@ ul.blog_pagination li a:hover {
     to {
         -webkit-transform: translate(calc(-50% - 0.5rem));
         transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+@media (max-width: 991.98px) {
+    .shoe-sole-scroller-section {
+        display: none !important;
     }
 }

@@ -19,6 +19,9 @@ export default function ShoeSoleScroller() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 992) {
+      return;
+    }
     gsap.registerPlugin(ScrollTrigger);
 
     const canvas = canvasRef.current;
@@ -151,6 +154,7 @@ export default function ShoeSoleScroller() {
   return (
     <section
       ref={containerRef}
+      className="d-none d-lg-flex shoe-sole-scroller-section"
       style={{
         position: 'relative',
         width: '100%',
@@ -158,7 +162,6 @@ export default function ShoeSoleScroller() {
         backgroundColor: '#0a0a0c',
         color: '#ffffff',
         overflow: 'hidden',
-        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}

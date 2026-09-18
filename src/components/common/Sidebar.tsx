@@ -12,7 +12,10 @@ export default function Sidebar({ open, setOpen }: any) {
               <i className="fal fa-times"></i>
             </button>
           </div>
-          <div className="sidebar__content mt-50 mb-20">
+          <div className="sidebar__content mt-40 mb-20">
+            <div className="sidebar__logo mb-30">
+              <a href="/"><img src="/assets/images/logos/mp-sole-white.png" alt="MP Sole®" style={{ height: "45px", width: "auto" }} /></a>
+            </div>
             <div className="mobile-menu fix mean-container">
               <MobileMenu />
             </div>

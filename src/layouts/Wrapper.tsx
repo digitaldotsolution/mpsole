@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { animationCreate } from '@/utils/utils';
 import { scrollSmother } from "@/utils/scrollSmother";
 import ScrollToTop from '@/components/common/ScrollToTop';
+import Preloader from '@/components/common/Preloader';
 
 import {
   ScrollSmoother,
@@ -114,6 +115,7 @@ export default function Wrapper({ children }: any) {
 
   return (
     <>
+      <Preloader />
       <div id="magic-cursor">
         <div id="ball" ref={cursorBallRef}></div>
       </div>

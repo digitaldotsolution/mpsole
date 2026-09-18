@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const sole = SOLE_TYPES_DATA.find((s) => s.slug === params.slug);
   if (!sole) {
     return {
-      title: 'Sole Not Found - YOUR SOLE™',
+      title: 'Sole Not Found - MP Sole®',
     };
   }
 
   return {
-    title: `${sole.title} | YOUR SOLE™ Footwear Manufacturing`,
+    title: `${sole.title} | MP Sole® Footwear Manufacturing`,
     description: sole.desc,
   };
 }

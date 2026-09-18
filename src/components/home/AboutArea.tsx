@@ -35,7 +35,7 @@ export default function AboutArea() {
             </div>
             <div className="col-lg-9 col-sm-9">
               <div className="about-content-part wow fadeInUp delay-0-2s">
-                <p>We are a high-precision footwear sole compounding and contract manufacturing facility. We engineer and mold next-generation outsoles, ergonomic midsoles, and propulsion plates for global athletic brands, luxury sneaker labels, and boutique designers worldwide. From custom CNC aluminum tooling to Shore-A durometer tuning, we bring 3D footwear concepts into mass commercial production with zero delamination.</p>
+                <p>At MP Sole®, we are a high-precision footwear sole compounding and contract manufacturing facility. We engineer and mold next-generation outsoles, ergonomic midsoles, and propulsion plates for global athletic brands, luxury sneaker labels, and boutique designers worldwide. From custom CNC aluminum tooling to Shore-A durometer tuning, MP Sole® brings 3D footwear concepts into mass commercial production with zero delamination.</p>
               </div>
               <div className="hero-counter-area d-flex justify-content-between wow fadeInUp delay-0-4s">
                 {counter_data.map((item, i) => (

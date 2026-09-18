@@ -37,7 +37,7 @@ export default function ContactArea() {
                     <i className="ri-map-pin-line"></i>
                   </span>
                   <h2>our office:</h2>
-                  <p>Jurain,Dhaka Bangladesh</p>
+                  <p>MP Sole® Precision Manufacturing Park</p>
                 </div>
 
 
@@ -46,7 +46,7 @@ export default function ContactArea() {
                     <i className="ri-headphone-line"></i>
                   </span>
                   <h2>contact number:</h2>
-                  <p>+1234321321</p>
+                  <p>+1 (800) 520-SOLE</p>
                 </div>
 
 
@@ -55,7 +55,7 @@ export default function ContactArea() {
                     <i className="ri-mail-line"></i>
                   </span>
                   <h2>Email us:</h2>
-                  <p>websitename@mail.com</p>
+                  <p>contact@mpsole.com</p>
                 </div>
 
 
