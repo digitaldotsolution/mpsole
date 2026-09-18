@@ -17,9 +17,6 @@ export default function TestimonoalArea() {
             <div className="col-lg-6 col-md-6">
 
               <div className="testimonial-item wow fadeInUp delay-0-2s">
-                <div className="author">
-                  <img src="assets/images/testimonials/author1.jpg" alt="Author" />
-                </div>
                 <div className="text">
                   "This is hands-down the most resilient outsole compound underfoot. Our machine load cycles proved 68% greater rebound efficiency compared to conventional EVA. Cellular compaction is virtually imperceptible."
                 </div>
@@ -33,9 +30,6 @@ export default function TestimonoalArea() {
             <div className="col-lg-6 col-md-6">
 
               <div className="testimonial-item wow fadeInUp delay-0-4s">
-                <div className="author">
-                  <img src="assets/images/testimonials/author2.jpg" alt="Author" />
-                </div>
                 <div className="text">
                   "The thermal bonding with our knit uppers was immaculate. Zero delamination, precise edge deflashing, and the Shore-A durometer consistency across 10,000 pairs was spot on."
                 </div>
@@ -49,9 +43,6 @@ export default function TestimonoalArea() {
             <div className="col-lg-4 col-md-6">
 
               <div className="testimonial-item wow fadeInUp delay-0-6s">
-                <div className="author">
-                  <img src="assets/images/testimonials/author3.jpg" alt="Author" />
-                </div>
                 <div className="text">
                   "Rapid prototype turnaround was a game changer. We got CNC-molded samples in 8 business days for our Munich trade show presentation."
                 </div>
@@ -65,9 +56,6 @@ export default function TestimonoalArea() {
             <div className="col-lg-4 col-md-6">
 
               <div className="testimonial-item wow fadeInUp delay-0-8s">
-                <div className="author">
-                  <img src="assets/images/testimonials/author4.jpg" alt="Author" />
-                </div>
                 <div className="text">
                   "Wet rock, loose scree, and rain-soaked roots — the micro-lug compound channels moisture instantly with unstoppable wet granite traction."
                 </div>
@@ -81,17 +69,12 @@ export default function TestimonoalArea() {
             <div className="col-lg-4 col-md-6">
 
               <div className="testimonial-item wow fadeInUp delay-0-9s">
-                <div className="author">
-                  <img src="assets/images/testimonials/author5.jpg" alt="Author" />
-                </div>
                 <div className="text">
-                  Yelp  planners help people to knowledge in about how to
-                  invest and in save their moneye the most efficient way eve plan
-                  ners help people tioniio know ledige in about how.
+                  "Our bio-polymer line passed European REACH non-toxicity standards on the first trial. The recycled algae compound molds cleanly without any foul odor or discolored patches."
                 </div>
                 <div className="testi-des">
-                  <h5>Henry Clark</h5>
-                  <span>Founder Oxyzen</span>
+                  <h5>Julian Thorne</h5>
+                  <span>Production VP — EcoStride Footwear</span>
                 </div>
               </div>
 
