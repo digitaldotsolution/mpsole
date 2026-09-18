@@ -23,8 +23,8 @@ export default function Home() {
             <HeroArea />
             <ShoeSoleScroller />
             <AboutArea />
-            <ResumeArea />
             <ServiceArea />
+            <ResumeArea />
             <BlogArea />
             <TestimonoalArea />
             <PortfolioArea />
