@@ -34,26 +34,6 @@ export default function ServiceArea() {
               </div>
             </div>
 
-
-            <div className="col-lg-4 col-md-5">
-              <div className="service-item wow fadeInUp delay-0-6s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>03</h5>
-                <h4>All-Terrain High-Traction Outsole (SOLE Classic)</h4>
-                <p>High-friction vulcanized gum rubber with 4.5mm multi-directional traction lugs. Tested on wet granite, loose dirt, and slick tarmac.</p>
-              </div>
-            </div>
-
-
-            <div className="col-lg-8 col-md-7">
-              <div className="service-item wow fadeInUp delay-0-8s">
-                <i className="ri-arrow-right-up-line"></i>
-                <h5>04</h5>
-                <h4>Recycled Bio-Compound Eco Cup-Sole</h4>
-                <p>Molded from 35% recycled tire rubber and plant-based bio-polymers. Classic luxury sneaker aesthetic with maximum flex-life and zero delamination.</p>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
