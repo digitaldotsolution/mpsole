@@ -28,7 +28,7 @@ const portfolio_data:DataType[] = [
   {
     id: 2,
     col: "6",
-    image: portfolio_img_2,
+    image: portfolio_img_1,
     title: "SOLE Pro (Dual-Density TPU)",
     category: "Performance Sneaker",
   },
