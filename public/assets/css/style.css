@@ -814,16 +814,35 @@ html {
 }
 
 .fixed-header .header-upper {
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-    border-bottom: 1px solid rgba(119, 119, 125, .2);
-    background: var(--primary-color);
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(12, 12, 16, 0.94) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 9999 !important;
+}
+
+.fixed-header .main-menu ul li a {
+    color: #ffffff !important;
+}
+
+.fixed-header .main-menu ul li a:hover {
+    color: #c8a87a !important;
+}
+
+.fixed-header .main-menu ul li.has-dropdown > a:after {
+    color: #ffffff !important;
+}
+
+.fixed-header .sidebar-toggle-btn i {
+    color: #ffffff !important;
 }
 
 .fixed-header .header-inner {
     padding: 15px 0px;
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
 }
 
 .header-inner {
@@ -833,11 +852,11 @@ html {
 }
 
 .main-header .header-upper {
-    z-index: 5;
+    z-index: 9999;
     width: 100%;
     position: fixed;
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
 }
 
 .logo img {

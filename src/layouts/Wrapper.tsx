@@ -30,23 +30,52 @@ export default function Wrapper({ children }: any) {
     }, 100);
 
     return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      ScrollSmoother.create({
-        smooth: 1.35,
-        effects: true,
-        smoothTouch: false,
-        normalizeScroll: false,
-        ignoreMobileResize: true,
-      });
-    }
   }, [pathname]);
 
   useEffect(() => {
-    scrollSmother();
+    if (typeof window === "undefined") return;
 
+    // Reset scroll position to top
+    window.scrollTo(0, 0);
+
+    // Bind fresh ScrollSmoother to newly mounted page DOM if not already created
+    const wrapperEl = document.getElementById("smooth-wrapper");
+    const contentEl = document.getElementById("smooth-content");
+    if (wrapperEl && contentEl) {
+      const activeSmoother = ScrollSmoother.get();
+      if (!activeSmoother) {
+        ScrollSmoother.create({
+          wrapper: wrapperEl,
+          content: contentEl,
+          smooth: 1.35,
+          effects: true,
+          smoothTouch: false,
+          normalizeScroll: false,
+          ignoreMobileResize: true,
+        });
+      }
+    }
+
+    const refreshTimer = setTimeout(() => {
+      ScrollTrigger.refresh();
+      if (typeof window !== "undefined" && window.location.hash) {
+        const smoother = ScrollSmoother.get();
+        if (smoother) {
+          smoother.scrollTo(window.location.hash, true, "top 80px");
+        }
+      }
+    }, 250);
+
+    return () => {
+      clearTimeout(refreshTimer);
+      // 1. Kill smoother attached to the page being unmounted
+      const oldSmoother = ScrollSmoother.get();
+      if (oldSmoother) {
+        oldSmoother.kill();
+      }
+      // 2. Clear triggers belonging to the page being unmounted
+      ScrollTrigger.getAll().forEach((t: any) => t.kill());
+    };
   }, [pathname]);
 
 

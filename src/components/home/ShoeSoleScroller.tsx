@@ -2,9 +2,11 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollSmoother, ScrollTrigger } from "@/plugins";
 
 const TOTAL_FRAMES = 117;
+// Persistent module-level cache so images remain ready across Next.js route changes
+const frameImagesCache: HTMLImageElement[] = [];
 
 export default function ShoeSoleScroller() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,26 +17,41 @@ export default function ShoeSoleScroller() {
   const specsCalloutRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
 
-  const [loadProgress, setLoadProgress] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [loadProgress, setLoadProgress] = useState(frameImagesCache.length >= TOTAL_FRAMES ? 100 : 0);
+  const [isLoaded, setIsLoaded] = useState(frameImagesCache.length >= TOTAL_FRAMES);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.innerWidth < 992) {
       return;
     }
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+    // 1. Ensure ScrollSmoother exists before creating pinned trigger
+    const wrapperEl = document.getElementById("smooth-wrapper");
+    const contentEl = document.getElementById("smooth-content");
+    if (wrapperEl && contentEl && !ScrollSmoother.get()) {
+      ScrollSmoother.create({
+        wrapper: wrapperEl,
+        content: contentEl,
+        smooth: 1.35,
+        effects: true,
+        smoothTouch: false,
+        normalizeScroll: false,
+        ignoreMobileResize: true,
+      });
+    }
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    const canvasCtx = canvas.getContext('2d');
+    if (!canvasCtx) return;
 
     // Fixed canvas buffer resolution (1280 x 720 matches images)
     canvas.width = 1280;
     canvas.height = 720;
 
-    const images: HTMLImageElement[] = new Array(TOTAL_FRAMES);
-    let loadedCount = 0;
+    let images: HTMLImageElement[] = frameImagesCache;
+    let loadedCount = frameImagesCache.length;
     let scheduledFrame = 1;
     let isRenderPending = false;
 
@@ -47,7 +64,7 @@ export default function ShoeSoleScroller() {
     const render = (targetFrame: number) => {
       const img = images[targetFrame - 1];
       if (!img || !img.complete) return;
-      ctx.drawImage(img, 0, 0, 1280, 720);
+      canvasCtx.drawImage(img, 0, 0, 1280, 720);
     };
 
     // Smooth non-blocking V-Sync frame queue
@@ -62,11 +79,8 @@ export default function ShoeSoleScroller() {
       }
     };
 
-    // Preload images into memory
-    for (let i = 1; i <= TOTAL_FRAMES; i++) {
-      const img = new Image();
-      img.src = getFramePath(i);
-      img.onload = () => {
+    const ctx = gsap.context(() => {
+      const handleImageLoaded = () => {
         loadedCount++;
         const pct = Math.round((loadedCount / TOTAL_FRAMES) * 100);
         if (progressBarRef.current) {
@@ -77,77 +91,99 @@ export default function ShoeSoleScroller() {
         if (loadedCount === 1) {
           render(1);
         }
-        if (loadedCount === TOTAL_FRAMES) {
+        if (loadedCount >= TOTAL_FRAMES) {
           setIsLoaded(true);
           render(1);
-          ScrollTrigger.refresh();
+          setTimeout(() => {
+            ScrollTrigger.refresh();
+          }, 150);
         }
       };
-      images[i - 1] = img;
-    }
 
-    // Direct DOM text updates without causing React component re-renders
-    let currentStage = 1;
-    const updateStageInfo = (frame: number) => {
-      let stage = 1;
-      if (frame >= 75) stage = 3;
-      else if (frame >= 35) stage = 2;
-
-      if (stage !== currentStage) {
-        currentStage = stage;
-        if (stageBadgeRef.current && stageTitleRef.current && stageDescRef.current) {
-          if (stage === 1) {
-            stageBadgeRef.current.innerText = 'STAGE 01 / FULL CHASSIS ROTATION';
-            stageTitleRef.current.innerText = 'Precision Engineered Footwear.';
-            stageDescRef.current.innerText = 'Designed for race-ready resilience and zero-gravity comfort under continuous load.';
-          } else if (stage === 2) {
-            stageBadgeRef.current.innerText = 'STAGE 02 / SOLE DECOUPLING';
-            stageTitleRef.current.innerText = 'Autonomous Sole Extraction.';
-            stageDescRef.current.innerText = 'The footwear sole seamlessly separates from the upper chassis, engineered with aerodynamic precision.';
-          } else {
-            stageBadgeRef.current.innerText = 'STAGE 03 / 3-LAYER ANATOMY';
-            stageTitleRef.current.innerText = '3-Layer Kinetic Propulsion.';
-            stageDescRef.current.innerText = 'Orthotic memory insole, carbon propulsion plate, and high-traction gum rubber outsole floating as one.';
+      if (frameImagesCache.length < TOTAL_FRAMES) {
+        images = new Array(TOTAL_FRAMES);
+        for (let i = 1; i <= TOTAL_FRAMES; i++) {
+          const img = new Image();
+          images[i - 1] = img;
+          frameImagesCache[i - 1] = img;
+          img.onload = handleImageLoaded;
+          img.onerror = handleImageLoaded;
+          img.src = getFramePath(i);
+          if (img.complete) {
+            handleImageLoaded();
           }
         }
-        if (specsCalloutRef.current) {
-          if (stage === 3) {
-            specsCalloutRef.current.style.opacity = '1';
-            specsCalloutRef.current.style.transform = 'translateY(0)';
-          } else {
-            specsCalloutRef.current.style.opacity = '0';
-            specsCalloutRef.current.style.transform = 'translateY(20px)';
-          }
-        }
+      } else {
+        // Already cached in memory from previous visit
+        render(1);
       }
-    };
 
-    // ScrollTrigger instance with buttery smooth scrub
-    const st = ScrollTrigger.create({
-      trigger: containerRef.current,
-      start: 'top top',
-      end: '+=2400',
-      pin: true,
-      scrub: 0.3,
-      anticipatePin: 1,
-      onUpdate: (self) => {
-        const frameIndex = Math.min(
-          TOTAL_FRAMES,
-          Math.max(1, Math.round(self.progress * (TOTAL_FRAMES - 1)) + 1)
-        );
-        requestFrame(frameIndex);
-        updateStageInfo(frameIndex);
-      },
-    });
+      // Direct DOM text updates without causing React component re-renders
+      let currentStage = 1;
+      const updateStageInfo = (frame: number) => {
+        let stage = 1;
+        if (frame >= 75) stage = 3;
+        else if (frame >= 35) stage = 2;
 
-    // Refresh after layout settle
-    const refreshTimer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 500);
+        if (stage !== currentStage) {
+          currentStage = stage;
+          if (stageBadgeRef.current && stageTitleRef.current && stageDescRef.current) {
+            if (stage === 1) {
+              stageBadgeRef.current.innerText = 'STAGE 01 / FULL CHASSIS ROTATION';
+              stageTitleRef.current.innerText = 'Precision Engineered Footwear.';
+              stageDescRef.current.innerText = 'Designed for race-ready resilience and zero-gravity comfort under continuous load.';
+            } else if (stage === 2) {
+              stageBadgeRef.current.innerText = 'STAGE 02 / SOLE DECOUPLING';
+              stageTitleRef.current.innerText = 'Autonomous Sole Extraction.';
+              stageDescRef.current.innerText = 'The footwear sole seamlessly separates from the upper chassis, engineered with aerodynamic precision.';
+            } else {
+              stageBadgeRef.current.innerText = 'STAGE 03 / 3-LAYER ANATOMY';
+              stageTitleRef.current.innerText = '3-Layer Kinetic Propulsion.';
+              stageDescRef.current.innerText = 'Orthotic memory insole, carbon propulsion plate, and high-traction gum rubber outsole floating as one.';
+            }
+          }
+          if (specsCalloutRef.current) {
+            if (stage === 3) {
+              specsCalloutRef.current.style.opacity = '1';
+              specsCalloutRef.current.style.transform = 'translateY(0)';
+            } else {
+              specsCalloutRef.current.style.opacity = '0';
+              specsCalloutRef.current.style.transform = 'translateY(20px)';
+            }
+          }
+        }
+      };
+
+      // ScrollTrigger instance with buttery smooth scrub
+      ScrollTrigger.create({
+        id: 'shoe-sole-anatomy-trigger',
+        trigger: containerRef.current,
+        start: 'top top',
+        end: '+=2400',
+        pin: true,
+        pinSpacing: true,
+        scrub: 0.3,
+        fastScrollEnd: true,
+        pinType: ScrollSmoother.get() ? "transform" : "fixed",
+        onUpdate: (self: any) => {
+          const frameIndex = Math.min(
+            TOTAL_FRAMES,
+            Math.max(1, Math.round(self.progress * (TOTAL_FRAMES - 1)) + 1)
+          );
+          requestFrame(frameIndex);
+          updateStageInfo(frameIndex);
+        },
+      });
+
+      // Immediate render frame 1 and refresh
+      render(1);
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 200);
+    }, containerRef);
 
     return () => {
-      clearTimeout(refreshTimer);
-      st.kill();
+      ctx.revert();
     };
   }, []);
 

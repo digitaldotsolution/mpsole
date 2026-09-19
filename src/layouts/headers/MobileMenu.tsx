@@ -1,14 +1,14 @@
-
 "use client"
 import React, { useState } from 'react'
 import menu_data from './menu_data'
 import Link from 'next/link'
-
+import { usePathname } from 'next/navigation'
+import { ScrollSmoother } from '@/plugins'
 
 export default function MobileMenu() {
-
+  const pathname = usePathname();
   const [navTitle, setNavTitle] = useState("");
-  //openMobileMenu
+
   const openMobileMenu = (menu: string) => {
     if (navTitle === menu) {
       setNavTitle("");
@@ -17,21 +17,50 @@ export default function MobileMenu() {
     }
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    if (link.includes("#")) {
+      const hash = link.substring(link.indexOf("#"));
+      if (pathname === "/" || link.startsWith("/#")) {
+        e.preventDefault();
+        const smoother = ScrollSmoother.get();
+        if (smoother) {
+          smoother.scrollTo(hash, true, "top 80px");
+        } else {
+          const target = document.querySelector(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+    }
+  };
 
   return (
     <>
-
       <div className="mean-bar"> 
         <nav className="mean-nav">
           <ul>
             {menu_data.map((item, i) => (
               <li key={i} className={`${item.has_dropdown && "has-dropdown"} ${navTitle === item.title ? "dropdown-opened" : ""}`}>
-                <Link href={item.link} className="linkstyle">{item.title}</Link>
+                <Link 
+                  href={item.link} 
+                  className="linkstyle"
+                  onClick={(e) => handleLinkClick(e, item.link)}
+                >
+                  {item.title}
+                </Link>
                 {item.has_dropdown &&
                   <>
                     <ul className="sub-menu" style={{ display: navTitle === item.title ? "block" : "none" }}>
                       {item.sub_menus?.map((sub_menu, index) => (
-                        <li key={index}><Link href={sub_menu.link}>{sub_menu.title}</Link></li>
+                        <li key={index}>
+                          <Link 
+                            href={sub_menu.link}
+                            onClick={(e) => handleLinkClick(e, sub_menu.link)}
+                          >
+                            {sub_menu.title}
+                          </Link>
+                        </li>
                       ))}
                     </ul>
                     <a className={`mean-expand ${navTitle === item.title ? "mean-clicked" : ""}`}
@@ -44,7 +73,6 @@ export default function MobileMenu() {
           </ul>
         </nav>
       </div>
-
     </>
   )
 }

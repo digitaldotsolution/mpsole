@@ -20,7 +20,13 @@ export default function HeaderOne() {
                 <div className="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
                   <div className="logo-area">
                     <div className="logo">
-                      <Link href="/"><img src="/assets/images/logos/mp-sole-black.png" alt="MP Sole®" style={{ height: "55px", width: "auto" }} /></Link>
+                      <Link href="/">
+                        <img 
+                          src={sticky ? "/assets/images/logos/mp-sole-white.png" : "/assets/images/logos/mp-sole-black.png"} 
+                          alt="MP Sole®" 
+                          style={{ height: "55px", width: "auto", transition: "all 0.3s ease" }} 
+                        />
+                      </Link>
                     </div>
                   </div>
                 </div>
