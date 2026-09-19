@@ -16,8 +16,8 @@ export default function Preloader() {
       },
     });
 
-    const curve = 'M0 502S175 272 500 272s500 230 500 230V0H0Z';
-    const flat = 'M0 2S175 1 500 1s500 1 500 1V0H0Z';
+    const curve = 'M-50 502S175 272 500 272s500 230 550 230V0H-50Z';
+    const flat = 'M-50 2S175 1 500 1s500 1 550 1V0H-50Z';
 
     tl.to('.preloader-heading .load-text', {
       delay: 0.8,
@@ -46,8 +46,8 @@ export default function Preloader() {
 
   return (
     <div className="preloader">
-      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-        <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      <svg viewBox="-50 0 1100 1000" preserveAspectRatio="none">
+        <path id="preloaderSvg" d="M-50,1005S175,995,500,995s500,5,550,5V0H-50Z"></path>
       </svg>
       <div className="preloader-heading">
         <div className="load-text">
