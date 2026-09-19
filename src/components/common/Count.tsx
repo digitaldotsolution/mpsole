@@ -7,9 +7,10 @@ interface CountType {
   number: number;
   text?: string;
   add_style?: boolean;
+  separator?: string;
 }
 
-const Count = ({ number, text, add_style }: CountType) => {
+const Count = ({ number, text, add_style, separator = "" }: CountType) => {
   const [focus, setFocus] = useState<boolean>(false);
   const visibleChangeHandler = (isVisible: boolean) => {
     if (isVisible) {
@@ -21,7 +22,7 @@ const Count = ({ number, text, add_style }: CountType) => {
 
   return (
     <>
-      <CountUp start={focus ? 0 : undefined} end={number} duration={2}>
+      <CountUp start={focus ? 0 : undefined} end={number} duration={2} separator={separator}>
         {({ countUpRef }) => (
           <div className={`d-inline ${add_style ? "align-items-center justify-content-center" : ""} `}>
             <span ref={countUpRef} />
