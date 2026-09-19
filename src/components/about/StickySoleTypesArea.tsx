@@ -6,23 +6,23 @@ import { ScrollSmoother, ScrollTrigger } from "@/plugins"
 const changing_soles = [
   {
     step: "02",
-    title: "Dual-Density Cushion Midsole (SOLE Pro)",
-    desc: "Designed for daily training and long-distance comfort. Soft 40C landing core with a stabilized 55C perimeter frame for cloud-like impact absorption.",
+    title: "Building Trust & Formulation Mastery",
+    desc: "Through relentless dedication in the 1990s, we perfected our proprietary rubber and polymer blends. Footwear makers across the region trusted our soles for zero-cracking resilience and superior wear life.",
   },
   {
     step: "03",
-    title: "Apex Multi-Lug Rock Outsole (Trail 360)",
-    desc: "Engineered for rugged mountain trails and wet terrain. Incorporates 4.5mm multi-directional cleat geometry with sticky vulcanized gum rubber compound.",
+    title: "Pioneering Gents Pio & T.R Soles",
+    desc: "Recognizing the need for modern formal and rugged footwear, we developed dedicated Gents Pio (PU) and Thermoplastic Rubber (TR) formulations, setting new industry standards for grip and all-weather flexibility.",
   },
   {
     step: "04",
-    title: "EcoBio Matrix Sole (Recycled Polymer)",
-    desc: "Sustainable high-performance compound formulated with 40% post-consumer recycled rubber and bio-derived circular elastomer resins.",
+    title: "Investing in Advanced Machinery",
+    desc: "Upgraded our factory with heavy-duty hydraulic presses, automated batch compounders, and temperature-controlled curing systems. This technological leap scaled our production while maintaining flawless unit consistency.",
   },
   {
     step: "05",
-    title: "Aero-Sprint Propulsion Chassis (Track Spec)",
-    desc: "Ultra-lightweight sprint chassis featuring an integrated carbon shank and spike receiver grid engineered for instantaneous energy transfer on curves.",
+    title: "Fashion Expansion & Ladies Jelly Soles",
+    desc: "Expanded into high-fashion footwear with crystal-transparent jelly compounds and optical UV inhibitors, becoming the preferred sole manufacturer for leading ladies' sandals and trendy brands.",
   }
 ]
 
@@ -85,7 +85,7 @@ export default function StickySoleTypesArea() {
         <div className="row">
           <div className="col-xl-12 col-lg-12">
             <div className="section-title section-black-title">
-              <h2>Sole Types & Formulations</h2>
+              <h2>Our Manufacturing Journey (1990 – Present)</h2>
             </div>
           </div>
         </div>
@@ -134,8 +134,8 @@ export default function StickySoleTypesArea() {
                   </span>
                 </div>
               </div>
-              <h4 style={{ minHeight: '72px' }}>Carbon-Plated Kinetic Sole (SOLE Pro Max)</h4>
-              <p>Engineered for elite marathon and race-day footwear. Combines an ultra-rigid 3K carbon-fiber propulsion plate with high-rebound supercritical nitrogen foam for explosive energy return on every stride.</p>
+              <h4 style={{ minHeight: '72px' }}>1990: Founded by Salahuddin</h4>
+              <p>Established in 1990 by Founder Salahuddin with deep passion for shoe craftsmanship. What began as a dedicated footwear sole workshop quickly earned an industry reputation for honesty, master compounding, and unbreakable sole durability.</p>
             </div>
           </div>
 

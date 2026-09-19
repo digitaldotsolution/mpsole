@@ -21,8 +21,8 @@ export default function StaticSoleCardsArea() {
                   06
                 </h5>
               </div>
-              <h4 style={{ minHeight: '72px' }}>High-Volume Automated Injection Molding</h4>
-              <p>State-of-the-art multi-station dual-color hydraulic injection and compression presses capable of 500,000+ pairs monthly with zero compound shrinkage defect.</p>
+              <h4 style={{ minHeight: '72px' }}>High-Volume Injection & Medicated Soles</h4>
+              <p>Commissioned computerized multi-station rotary injection molding plants and bio-engineered orthopedic Medicated Soles with anatomical arch support for therapeutic, comfort, and diabetic footwear.</p>
             </div>
           </div>
 
@@ -41,8 +41,8 @@ export default function StaticSoleCardsArea() {
                   07
                 </h5>
               </div>
-              <h4 style={{ minHeight: '72px' }}>5-Axis CNC Steel & Aluminum Mold Tooling</h4>
-              <p>In-house computerized CNC mold milling with 0.02mm tolerance for intricate multi-directional outsole tread geometries and deep mud-clearing lugs.</p>
+              <h4 style={{ minHeight: '72px' }}>2026: A Stable, Industry-Leading Powerhouse</h4>
+              <p>Today in 2026, MP Sole® stands stable, highly respected, and technologically state-of-the-art with 5-axis CNC mold tooling, massive daily production capacity, and unshakeable customer trust across the footwear industry.</p>
             </div>
           </div>
         </div>

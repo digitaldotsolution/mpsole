@@ -25,13 +25,13 @@ const menu_data: DataType[] = [
 	{
 		id: 4,
 		title: "Sole Manufacture",
-		link: "/sole-types/sole-pro-max",
+		link: "/sole-types/pio-sole-gents",
 		has_dropdown: true,
 		sub_menus: [
-			{ link: "/sole-types/sole-pro-max", title: "SOLE Pro Max (Carbon-Fiber)" },
-			{ link: "/sole-types/sole-classic", title: "SOLE Classic (Gum Rubber)" },
-			{ link: "/sole-types/apex-trail-360", title: "Apex Trail 360 (Outdoor)" },
-			{ link: "/sole-types/ecobio-matrix", title: "EcoBio Matrix (Recycled)" },
+			{ link: "/sole-types/pio-sole-gents", title: "Pio Sole Gents" },
+			{ link: "/sole-types/ladies-jelly-sole", title: "Ladies Jelly Sole" },
+			{ link: "/sole-types/tr-sole", title: "T.R Sole" },
+			{ link: "/sole-types/medicated-sole", title: "Medicated Sole" },
 		],
 	},
 	{
