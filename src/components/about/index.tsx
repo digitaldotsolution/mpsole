@@ -1,10 +1,11 @@
-
+"use client"
 import React from 'react'
-import SkillArea from './SkillArea'
-import ResumeArea from './ResumeArea'
-import Breadcrumb from '../common/Breadcrumb'
-import FooterOne from '@/layouts/footers/FooterOne'
 import HeaderOne from '@/layouts/headers/HeaderOne'
+import FooterOne from '@/layouts/footers/FooterOne'
+import Breadcrumb from '../common/Breadcrumb'
+import AboutArea from '@/components/home/AboutArea'
+import StickySoleTypesArea from './StickySoleTypesArea'
+import StaticSoleCardsArea from './StaticSoleCardsArea'
 
 export default function About() {
   return (
@@ -13,9 +14,13 @@ export default function About() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <Breadcrumb title="About Me" />
-            <ResumeArea />
-            <SkillArea />
+            <Breadcrumb 
+              title="About MP Sole®" 
+              subtitle="Pioneering High-Precision Footwear Soles & Advanced Polymer Tooling Since 1990" 
+            />
+            <AboutArea />
+            <StickySoleTypesArea />
+            <StaticSoleCardsArea />
           </main>
           <FooterOne />
         </div>
