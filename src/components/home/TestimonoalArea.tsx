@@ -1,8 +1,11 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { db } from '@/lib/firebase'
+import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from 'firebase/firestore'
 
 interface Testimonial {
+  id?: string
   name: string
   location: string
   text: string
@@ -51,6 +54,35 @@ export default function TestimonoalArea() {
 
   useEffect(() => {
     setMounted(true)
+
+    const fetchTestimonials = async () => {
+      try {
+        const q = query(collection(db, 'testimonials'), orderBy('createdAt', 'desc'))
+        const snap = await getDocs(q)
+        if (!snap.empty) {
+          const list: Testimonial[] = []
+          snap.forEach((doc) => {
+            const data = doc.data()
+            if (data.status !== 'hidden') {
+              list.push({
+                id: doc.id,
+                name: data.name || 'Anonymous Client',
+                location: data.location || 'Pakistan',
+                text: data.text || '',
+                rating: data.rating || 5,
+              })
+            }
+          })
+          if (list.length > 0) {
+            setTestimonials(list)
+          }
+        }
+      } catch (e) {
+        console.warn('Using default testimonials:', e)
+      }
+    }
+
+    fetchTestimonials()
   }, [])
 
   const renderStars = (count: number = 5) => (
@@ -69,7 +101,7 @@ export default function TestimonoalArea() {
     </div>
   )
 
-  const handleSubmitReview = (e: React.FormEvent) => {
+  const handleSubmitReview = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!fullName.trim() || !reviewText.trim()) return
 
@@ -83,6 +115,39 @@ export default function TestimonoalArea() {
     // Add new review to the top of list
     setTestimonials([newReview, ...testimonials])
     setIsSubmitted(true)
+
+    try {
+      // 1. Save review in Firestore database
+      await addDoc(collection(db, 'testimonials'), {
+        name: fullName.trim(),
+        location: location.trim() || "Pakistan",
+        text: reviewText.trim(),
+        rating: selectedRating,
+        status: 'approved',
+        createdAt: new Date().toISOString(),
+        timestamp: serverTimestamp(),
+      })
+
+      // 2. Send instant email alert to Formspree
+      try {
+        await fetch('https://formspree.io/f/mrpbbwvg', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            type: 'Client Testimonial Review',
+            name: fullName.trim(),
+            location: location.trim() || 'Pakistan',
+            rating: `${selectedRating} / 5 Stars`,
+            review: reviewText.trim(),
+            _subject: `New Testimonial Submitted (${selectedRating}★) from ${fullName.trim()}`,
+          }),
+        })
+      } catch (formspreeErr) {
+        console.warn('Formspree review alert error:', formspreeErr)
+      }
+    } catch (err) {
+      console.error('Failed to save review to Firestore:', err)
+    }
 
     // Reset and close modal after 2.2s
     setTimeout(() => {

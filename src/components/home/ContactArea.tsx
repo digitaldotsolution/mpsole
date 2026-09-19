@@ -1,19 +1,72 @@
 
 "use client"
 import React, { useState } from 'react'
+import { db } from '@/lib/firebase'
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 
 export default function ContactArea() {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [quantity, setQuantity] = useState('100-500');
-  const [soleType, setSoleType] = useState('sole-pro-max');
+  const [soleType, setSoleType] = useState('Pio Sole Gents');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', { name, email, quantity, soleType, subject, message });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // 1. Save lead into Firebase Firestore database
+      await addDoc(collection(db, 'inquiries'), {
+        name: name.trim(),
+        email: email.trim(),
+        quantity,
+        soleType,
+        subject: subject.trim(),
+        message: message.trim(),
+        status: 'New',
+        createdAt: new Date().toISOString(),
+        timestamp: serverTimestamp(),
+      });
+
+      // 2. Dispatch email alert to admin via Formspree
+      try {
+        await fetch('https://formspree.io/f/mrpbbwvg', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            name: name.trim(),
+            email: email.trim(),
+            orderQuantity: quantity,
+            soleFormulation: soleType,
+            subject: subject.trim(),
+            message: message.trim(),
+            _subject: `New Production Inquiry: ${subject.trim()} from ${name.trim()}`,
+          }),
+        });
+      } catch (formspreeErr) {
+        console.warn('Formspree dispatch error:', formspreeErr);
+      }
+
+      setSubmitStatus('success');
+      setName('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+    } catch (err) {
+      console.error('Contact submission error:', err);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
@@ -141,10 +194,11 @@ export default function ContactArea() {
                           onChange={(e) => setSoleType(e.target.value)}
                           style={{ backgroundColor: '#18181b', color: '#ffffff', border: '1px solid rgba(255,255,255,0.15)' }}
                         >
-                          <option value="sole-pro-max">SOLE Pro Max (Carbon-Plate + High-Rebound TPU)</option>
-                          <option value="sole-pro">SOLE Pro (Dual-Density Bio-EVA Cushioning)</option>
-                          <option value="sole-classic">SOLE Classic (Abrasion-Resistant Gum Rubber)</option>
-                          <option value="custom-mold">Custom CNC Mold & Durometer Compounding</option>
+                          <option value="Pio Sole Gents">Pio Sole Gents (Micro-Cellular PU)</option>
+                          <option value="Ladies Jelly Sole">Ladies Jelly Sole (Crystal PVC Compound)</option>
+                          <option value="T.R Sole">T.R Sole (High-Traction Thermoplastic Rubber)</option>
+                          <option value="Medicated Sole">Medicated Sole (Orthopedic Cushion & Arch Support)</option>
+                          <option value="Custom Tooling / Formulation">Custom Tooling / Custom Formulation</option>
                         </select>
                       </div>
                     </div>
@@ -158,7 +212,7 @@ export default function ContactArea() {
                           className="form-control"
                           value={subject}
                           onChange={(e) => setSubject(e.target.value)}
-                          placeholder="e.g. Inquiry for Spring 2027 Trail Runner Outsole Mold"
+                          placeholder="e.g. Inquiry for Gents Formal PU Outsole Production"
                           required
                           data-error="Please enter your Subject"
                         />
@@ -176,7 +230,7 @@ export default function ContactArea() {
                           rows={4}
                           value={message}
                           onChange={(e) => setMessage(e.target.value)}
-                          placeholder="Provide target durometer (Shore A), upper bonding requirements, 3D CAD status, and timeline..."
+                          placeholder="Provide target durometer (Shore A), upper bonding requirements, mold size range, and target delivery..."
                           required
                           data-error="Please Write your Message"
                         ></textarea>
@@ -185,15 +239,59 @@ export default function ContactArea() {
                     </div>
                     <div className="col-md-12">
                       <div className="form-group mb-0">
-                        <button type="submit" className="theme-btn">
-                          Request Production Quote <i className="ri-mail-line"></i>
+                        <button 
+                          type="submit" 
+                          className="theme-btn" 
+                          disabled={isSubmitting}
+                          style={{ opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}
+                        >
+                          {isSubmitting ? (
+                            <>
+                              Sending Request... <i className="ri-loader-4-line" style={{ animation: 'spin 1s linear infinite', display: 'inline-block' }}></i>
+                            </>
+                          ) : (
+                            <>
+                              Request Production Quote <i className="ri-mail-line"></i>
+                            </>
+                          )}
                         </button>
-                        <div id="msgSubmit" className="hidden"></div>
                       </div>
                     </div>
-                    <div className="col-md-12 text-center">
-                      <p className="input-success">We have received your production request, our lab team will review your specs within 24 hours!</p>
-                      <p className="input-error">Sorry, Message could not send! Please try again.</p>
+                    <div className="col-md-12" style={{ marginTop: '16px' }}>
+                      {submitStatus === 'success' && (
+                        <div style={{
+                          background: 'rgba(34, 197, 94, 0.15)',
+                          border: '1px solid #22c55e',
+                          color: '#4ade80',
+                          padding: '14px 20px',
+                          borderRadius: '10px',
+                          fontSize: '14px',
+                          fontWeight: 500,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px',
+                        }}>
+                          <i className="ri-checkbox-circle-fill" style={{ fontSize: '20px' }}></i>
+                          <span>Thank you! Your production request has been recorded in our system. Our engineering lab will contact you within 24 hours.</span>
+                        </div>
+                      )}
+                      {submitStatus === 'error' && (
+                        <div style={{
+                          background: 'rgba(239, 68, 68, 0.15)',
+                          border: '1px solid #ef4444',
+                          color: '#f87171',
+                          padding: '14px 20px',
+                          borderRadius: '10px',
+                          fontSize: '14px',
+                          fontWeight: 500,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '10px',
+                        }}>
+                          <i className="ri-error-warning-fill" style={{ fontSize: '20px' }}></i>
+                          <span>Sorry, could not submit at this moment. Please check your internet connection or email us directly at contact@mpsole.com.</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </form>
