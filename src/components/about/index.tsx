@@ -6,6 +6,7 @@ import Breadcrumb from '../common/Breadcrumb'
 import AboutArea from '@/components/home/AboutArea'
 import StickySoleTypesArea from './StickySoleTypesArea'
 import StaticSoleCardsArea from './StaticSoleCardsArea'
+import FaqArea from './FaqArea'
 
 export default function About() {
   return (
@@ -21,6 +22,7 @@ export default function About() {
             <AboutArea />
             <StickySoleTypesArea />
             <StaticSoleCardsArea />
+            <FaqArea />
           </main>
           <FooterOne />
         </div>
