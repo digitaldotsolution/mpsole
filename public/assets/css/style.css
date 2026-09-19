@@ -1248,6 +1248,7 @@ html {
 */
 .main-hero-area {
     padding-top: 115px;
+    padding-bottom: 20px;
     background: var(--primary-color);
 }
 
@@ -1347,15 +1348,18 @@ html {
 .hero-image {
     text-align: center;
     position: relative;
+    padding: 10px 0 25px;
 }
 
 .hero-image img {
-    width: 400px;
+    width: 270px;
+    max-width: 100%;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 18px;
     border: 3px solid #fff;
-    margin-top: -100px;
-    rotate: 10deg;
+    margin-top: 0;
+    rotate: 6deg;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     -webkit-transition: 0.4s;
     transition: 0.4s;
 }
