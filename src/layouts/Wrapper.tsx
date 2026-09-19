@@ -8,6 +8,7 @@ import { animationCreate } from '@/utils/utils';
 import { scrollSmother } from "@/utils/scrollSmother";
 import ScrollToTop from '@/components/common/ScrollToTop';
 import Preloader from '@/components/common/Preloader';
+import WhatsAppWidget from '@/components/common/WhatsAppWidget';
 
 import {
   ScrollSmoother,
@@ -150,6 +151,7 @@ export default function Wrapper({ children }: any) {
       </div>
       {children}
       <ScrollToTop />
+      <WhatsAppWidget />
     </>
   )
 }

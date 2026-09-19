@@ -24,7 +24,7 @@ const menu_data: DataType[] = [
 	},
 	{
 		id: 4,
-		title: "Sole Types",
+		title: "Sole Manufacture",
 		link: "/sole-types/sole-pro-max",
 		has_dropdown: true,
 		sub_menus: [
@@ -42,7 +42,7 @@ const menu_data: DataType[] = [
 	},
 	{
 		id: 6,
-		title: "Contact",
+		title: "B2B Quote",
 		link: "/contact",
 		has_dropdown: false,
 	},

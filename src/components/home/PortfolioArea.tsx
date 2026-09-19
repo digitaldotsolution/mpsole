@@ -5,9 +5,6 @@ import ImagePopup from '@/modals/ImagePopup';
 
 import portfolio_img_1 from "@/assets/images/projects/work1.jpg";
 import portfolio_img_2 from "@/assets/images/projects/work2.jpg";
-import portfolio_img_3 from "@/assets/images/projects/work3.jpg";
-import portfolio_img_4 from "@/assets/images/projects/work4.jpg";
-import portfolio_img_5 from "@/assets/images/projects/work5.jpg";
 
 interface DataType {
   id: number;
@@ -28,30 +25,9 @@ const portfolio_data:DataType[] = [
   {
     id: 2,
     col: "6",
-    image: portfolio_img_1,
+    image: portfolio_img_2,
     title: "SOLE Pro (Dual-Density TPU)",
     category: "Performance Sneaker",
-  },
-  {
-    id: 3,
-    col: "4",
-    image: portfolio_img_3,
-    title: "SOLE Classic (Gum Rubber)",
-    category: "Heritage Casual",
-  },
-  {
-    id: 4,
-    col: "4",
-    image: portfolio_img_4,
-    title: "Trail Lug Apex 360",
-    category: "Outdoor & Hiking",
-  },
-  {
-    id: 5,
-    col: "4",
-    image: portfolio_img_5,
-    title: "Bio-Compound Recycled Sole",
-    category: "Eco Sustainable",
   },
 ];
 
@@ -67,7 +43,7 @@ export default function PortfolioArea() {
     setIsOpen(true);
   };
   //  images
-  const image = portfolio_data.slice(0, 5).map((item) => item.image.src);
+  const image = portfolio_data.map((item) => item.image.src);
 
 
   return (
