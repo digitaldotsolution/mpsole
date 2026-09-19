@@ -284,7 +284,7 @@ export default function ShoeSoleScroller() {
       <div
         style={{
           position: 'absolute',
-          top: '90px',
+          top: '150px',
           left: '60px',
           zIndex: 5,
           pointerEvents: 'none',
