@@ -2,8 +2,6 @@
 "use client" 
 import React from 'react'
 import Link from 'next/link'
-import { Autoplay, Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 export default function PostboxArea({setIsVideoOpen}: any) {
 
@@ -18,11 +16,6 @@ export default function PostboxArea({setIsVideoOpen}: any) {
             <div className="col-xxl-8 col-lg-8">
               <div className="postbox__wrapper">
                 <article className="postbox__item format-image mb-50 transition-3">
-                  <div className="postbox__thumb w-img">
-                    <Link href="/blog-details">
-                      <img src="assets/images/blog/blog1.jpg" alt="" />
-                    </Link>
-                  </div>
                   <div className="postbox__content">
                     <div className="postbox__meta">
                       <span>
@@ -47,12 +40,6 @@ export default function PostboxArea({setIsVideoOpen}: any) {
                   </div>
                 </article>
                 <article className="postbox__item format-video mb-50 transition-3">
-                  <div className="postbox__thumb postbox__video w-img p-relative">
-                    <Link href="/blog-details">
-                      <img src="assets/images/blog/blog2.jpg" alt="" />
-                    </Link>
-                    <a onClick={() => setIsVideoOpen(true)} style={{ cursor: "pointer" }} className="play-btn pulse-btn popup-video"><i className="fas fa-play"></i></a>
-                  </div>
                   <div className="postbox__content">
                     <div className="postbox__meta">
                       <span>
@@ -104,32 +91,6 @@ export default function PostboxArea({setIsVideoOpen}: any) {
                   </div>
                 </article>
                 <article className="postbox__item format-image mb-50 transition-3">
-                  <Swiper 
-                  slidesPerView={1}
-                  loop={true}
-                  autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false
-                  }}
-                  navigation={{ nextEl: '.postbox-slider-button-next', prevEl: '.postbox-slider-button-prev' }}
-                  modules={[Navigation, Autoplay]}
-                  className="postbox__thumb postbox__slider swiper-container w-img p-relative">
-                    
-                      <SwiperSlide className="postbox__slider-item swiper-slide">
-                        <img src="assets/images/blog/blog1.jpg" alt="" />
-                      </SwiperSlide>
-                      <SwiperSlide className="postbox__slider-item swiper-slide">
-                        <img src="assets/images/blog/blog2.jpg" alt="" />
-                      </SwiperSlide>
-                      <SwiperSlide className="postbox__slider-item swiper-slide">
-                        <img src="assets/images/blog/blog3.jpg" alt="" />
-                      </SwiperSlide>
-                   
-                    <div className="postbox__nav">
-                      <button className="postbox-slider-button-next"><i className="fa-regular fa-angle-right"></i></button>
-                      <button className="postbox-slider-button-prev"><i className="fa-regular fa-angle-left"></i></button>
-                    </div>
-                  </Swiper>
                   <div className="postbox__content">
                     <div className="postbox__meta">
                       <span>
@@ -212,10 +173,7 @@ export default function PostboxArea({setIsVideoOpen}: any) {
                 <div className="sidebar__widget mb-45">
                   <div className="sidebar__widget-content">
                     <div className="sidebar__author">
-                      <div className="sidebar__author-thumb">
-                        <img src="assets/images/blog/author.jpg" alt="" />
-                      </div>
-                      <div className="sidebar__author-content">
+                      <div className="sidebar__author-content pt-15">
                         <h3 className="sidebar__author-title">Colene Landin</h3>
                         <p>Lorem ipsum dolor ametare elit consectetur adipiscing Aenean pellentesque.</p>
                         <div className="sidebar__author-social d-flex align-items-center justify-content-center">
@@ -231,10 +189,7 @@ export default function PostboxArea({setIsVideoOpen}: any) {
                   <h3 className="sidebar__widget-title">Recent Post</h3>
                   <div className="sidebar__widget-content">
                     <div className="sidebar__post">
-                      <div className="rc__post d-flex align-items-center">
-                        <div className="rc__post-thumb">
-                          <Link href="/blog-details"><img src="assets/images/blog/blog-sm-1.jpg" alt="" /></Link>
-                        </div>
+                      <div className="rc__post">
                         <div className="rc__post-content">
                           <h3 className="rc__post-title">
                             <Link href="/blog-details">Business meeting 2021 in San Francisco</Link>
@@ -249,10 +204,7 @@ export default function PostboxArea({setIsVideoOpen}: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="rc__post d-flex align-items-center">
-                        <div className="rc__post-thumb">
-                          <Link href="/blog-details"><img src="assets/images/blog/blog-sm-2.jpg" alt="" /></Link>
-                        </div>
+                      <div className="rc__post">
                         <div className="rc__post-content">
                           <h3 className="rc__post-title">
                             <Link href="/blog-details">Developing privacy user-centric apps</Link>
@@ -267,10 +219,7 @@ export default function PostboxArea({setIsVideoOpen}: any) {
                           </div>
                         </div>
                       </div>
-                      <div className="rc__post d-flex align-items-center">
-                        <div className="rc__post-thumb">
-                          <Link href="/blog-details"><img src="assets/images/blog/blog-sm-3.jpg" alt="" /></Link>
-                        </div>
+                      <div className="rc__post">
                         <div className="rc__post-content">
                           <h3 className="rc__post-title">
                             <Link href="/blog-details">Starting and Growing Web Design in 2022</Link>
