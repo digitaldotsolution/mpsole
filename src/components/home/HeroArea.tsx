@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from 'react'
 
 const SOLE_TYPES_LIST = [
-  "Carbon-Fiber Marathon Outsole",
-  "Vulcanized Gum Rubber Cup-Sole",
-  "Apex Multi-Lug Rock Outsole",
-  "Bio-Recycled Matrix Sole"
+  "Pio Sole Gents",
+  "Ladies Jelly Sole",
+  "T.R Sole",
+  "Medicated Sole"
 ];
 
 export default function HeroArea() {
@@ -60,42 +60,30 @@ export default function HeroArea() {
                 }}>
                   MP SOLE®
                 </h2>
-                <h4 style={{
-                  fontSize: 'clamp(17px, 2.2vw, 30px)',
-                  fontWeight: 700,
-                  letterSpacing: '2px',
-                  textTransform: 'uppercase',
-                  marginTop: '10px',
-                  marginBottom: '28px',
-                  minHeight: '44px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexWrap: 'wrap',
-                  gap: '6px',
-                }}>
-                  <span style={{ color: '#1a1a1a' }}>
+                <h4 className="hero-sole-title">
+                  <span className="static-prefix" style={{ color: '#1a1a1a' }}>
                     SOLE FORMULATION —
                   </span>
-                  <span style={{ color: '#8c6b38' }}>
+                  <span className="dynamic-typed" style={{ color: '#8c6b38' }}>
                     {displayedText}
+                    <span
+                      style={{
+                        display: 'inline-block',
+                        width: '3px',
+                        height: '1em',
+                        backgroundColor: '#8c6b38',
+                        marginLeft: '3px',
+                        verticalAlign: 'middle',
+                        animation: 'blinkCursor 0.8s infinite',
+                      }}
+                    />
                   </span>
-                  <span
-                    style={{
-                      display: 'inline-block',
-                      width: '3px',
-                      height: '1em',
-                      backgroundColor: '#8c6b38',
-                      marginLeft: '2px',
-                      animation: 'blinkCursor 0.8s infinite',
-                    }}
-                  />
                 </h4>
               </div>
             </div>
           </div>
           <div className="row align-items-center">
-            <div className="col-lg-3 pt-30">
+            <div className="col-lg-3 hero-flags-col">
               <div className="hero-content wow fadeInUp delay-0-2s">
                 <div className="clienti-reviews">
                   <ul className="clienti-profile">
@@ -140,7 +128,7 @@ export default function HeroArea() {
             </div>
             <div className="col-lg-6">
               <div className="hero-image">
-                <img src="/assets/images/about/hero-sole.jpg" alt="MP SOLE®" />
+                <img src="/assets/images/about/hero-sole.webp" alt="MP SOLE®" />
               </div>
             </div>
             <div className="col-lg-3 pt-30">

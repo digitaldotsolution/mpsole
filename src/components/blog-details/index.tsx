@@ -11,7 +11,7 @@ export default function BlogDetails() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <Breadcrumb title="Create a Landing Page That Performs Great" />
+            <Breadcrumb title="Best Quality Shoe Sole Manufacturing in Karachi, Pakistan" />
             <BlogDetailsArea />
           </main>
           <FooterOne />

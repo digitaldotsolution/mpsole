@@ -21,7 +21,6 @@ export default function About() {
             />
             <AboutArea />
             <StickySoleTypesArea />
-            <StaticSoleCardsArea />
             <FaqArea />
           </main>
           <FooterOne />

@@ -3596,3 +3596,51 @@ ul.blog_pagination li a:hover {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
 }
+
+.hero-sole-title {
+    font-size: clamp(17px, 2.2vw, 30px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.hero-sole-title .dynamic-typed {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.2em;
+    white-space: nowrap;
+}
+
+.hero-flags-col {
+    padding-top: 30px;
+}
+
+@media (max-width: 767px) {
+    .hero-sole-title {
+        flex-direction: column !important;
+        gap: 4px !important;
+        font-size: clamp(16px, 4.8vw, 22px) !important;
+        letter-spacing: 1px !important;
+        min-height: 48px !important;
+        margin-bottom: 10px !important;
+    }
+    .hero-sole-title .static-prefix {
+        white-space: nowrap !important;
+    }
+    .hero-sole-title .dynamic-typed {
+        min-height: 1.25em !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+    }
+    .hero-flags-col {
+        padding-top: 0px !important;
+    }
+}

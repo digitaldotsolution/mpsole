@@ -26,12 +26,12 @@ const counter_data = [
 export default function AboutArea() {
   return (
     <>
-      <section id="about" className="about-area">
+      <section id="about" className="about-area" style={{ paddingTop: 'clamp(55px, 6vw, 100px)' }}>
         <div className="container">
           <div className="row">
 
             <div className="col-lg-3 col-sm-3">
-              <h2 className="about-pre-title">About Us</h2>
+              <h2 className="about-pre-title" style={{ marginTop: '8px' }}>About Us</h2>
             </div>
             <div className="col-lg-9 col-sm-9">
               <div className="about-content-part wow fadeInUp delay-0-2s">

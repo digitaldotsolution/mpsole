@@ -89,37 +89,55 @@ export default function ContactArea() {
                   <span className="circle-btn">
                     <i className="ri-map-pin-line"></i>
                   </span>
-                  <h2>our office:</h2>
-                  <p>MP Sole® Precision Manufacturing Park</p>
+                  <h2>Our Factory / Address:</h2>
+                  <p>Plot No MIIIE-A-30-A-1, St#01 Muhammadi Rd, BLOCK-B, Shershah Colony, Karachi.</p>
                 </div>
-
 
                 <div className="single-contact wow fadeInUp" data-wow-delay=".4s">
                   <span className="circle-btn">
-                    <i className="ri-headphone-line"></i>
+                    <i className="ri-whatsapp-line"></i>
                   </span>
-                  <h2>contact number:</h2>
-                  <p>+1 (800) 520-SOLE</p>
+                  <h2>WhatsApp / Call:</h2>
+                  <p>
+                    <a href="https://wa.me/923152653086" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', fontWeight: 600 }}>
+                      0315-2653086
+                    </a>
+                  </p>
                 </div>
 
-
-                <div className="single-contact wow fadeInUp" data-wow-delay=".6s">
+                <div className="single-contact wow fadeInUp" data-wow-delay=".5s">
                   <span className="circle-btn">
-                    <i className="ri-mail-line"></i>
+                    <i className="ri-checkbox-circle-line"></i>
                   </span>
-                  <h2>Email us:</h2>
-                  <p>contact@mpsole.com</p>
+                  <h2>Sole Supply & Manufacturing:</h2>
+                  <p style={{ lineHeight: '1.5' }}>
+                    <strong>Sole Manufacturer & Supplier</strong><br />
+                    <span style={{ fontSize: '14px', color: '#888888' }}>
+                      Quality Soles • Latest Designs<br />
+                      Wholesale & Retail Available
+                    </span>
+                  </p>
                 </div>
 
-
                 <div className="single-contact wow fadeInUp" data-wow-delay=".6s">
-                  <h2>Socials</h2>
+                  <h2>Official Socials</h2>
                   <div className="about-social">
                     <ul>
-                      <li><a target='_blank' href="https://facebook.com"><i className="ri-facebook-circle-fill"></i></a></li>
-                      <li><a target='_blank' href="https://twitter.com"><i className="ri-twitter-x-line"></i></a></li>
-                      <li><a target='_blank' href="https://linkedin.com"><i className="ri-linkedin-fill"></i></a></li>
-                      <li><a target='_blank' href="https://github.com/jamilrayhan10"><i className="ri-github-line"></i></a></li>
+                      <li>
+                        <a target='_blank' rel="noopener noreferrer" href="https://www.facebook.com/mpsolemaufacture" title="Facebook">
+                          <i className="ri-facebook-circle-fill"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a target='_blank' rel="noopener noreferrer" href="https://www.instagram.com/mpsolemanufacture/" title="Instagram">
+                          <i className="ri-instagram-fill"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a target='_blank' rel="noopener noreferrer" href="https://wa.me/923152653086" title="WhatsApp">
+                          <i className="ri-whatsapp-fill"></i>
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>

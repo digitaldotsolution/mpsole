@@ -38,12 +38,12 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       'Superior Abrasion Resistance for Men Formal & Casual Shoes',
       'Smooth Heel Transition with Pre-Engineered Stitching Welts'
     ],
-    image: '/assets/images/soles/sole-pio-gents.jpg',
+    image: '/assets/images/soles/sole-pio-gents-1.webp',
     gallery: [
-      '/assets/images/soles/sole-pio-gents.jpg',
-      '/assets/images/soles/sole-ladies-jelly.jpg',
-      '/assets/images/soles/sole-tr.jpg',
-      '/assets/images/soles/sole-medicated.jpg',
+      '/assets/images/soles/sole-pio-gents-1.webp',
+      '/assets/images/soles/sole-pio-gents-2.webp',
+      '/assets/images/soles/sole-pio-gents-3.webp',
+      '/assets/images/soles/sole-pio-gents-4.webp',
     ],
   },
   {
@@ -66,12 +66,12 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       'Custom Tint Formulation (Clear, Rose, Amber, Smoke, Glitters)',
       'Anti-Skid Micro-Grip Underfoot Pattern for Wet & Tile Surfaces'
     ],
-    image: '/assets/images/soles/sole-ladies-jelly.jpg',
+    image: '/assets/images/soles/sole-ladies-jelly-1.webp',
     gallery: [
-      '/assets/images/soles/sole-ladies-jelly.jpg',
-      '/assets/images/soles/sole-pio-gents.jpg',
-      '/assets/images/soles/sole-tr.jpg',
-      '/assets/images/soles/sole-medicated.jpg',
+      '/assets/images/soles/sole-ladies-jelly-1.webp',
+      '/assets/images/soles/sole-ladies-jelly-2.webp',
+      '/assets/images/soles/sole-ladies-jelly-3.webp',
+      '/assets/images/soles/sole-ladies-jelly-4.webp',
     ],
   },
   {
@@ -94,12 +94,12 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       'Dual-Color and Dual-Density Injection Molding Ready',
       'Low DIN Abrasion Loss < 110 mm³ for Extended Sole Lifespan'
     ],
-    image: '/assets/images/soles/sole-tr.jpg',
+    image: '/assets/images/soles/sole-tr-1.webp',
     gallery: [
-      '/assets/images/soles/sole-tr.jpg',
-      '/assets/images/soles/sole-pio-gents.jpg',
-      '/assets/images/soles/sole-ladies-jelly.jpg',
-      '/assets/images/soles/sole-medicated.jpg',
+      '/assets/images/soles/sole-tr-1.webp',
+      '/assets/images/soles/sole-tr-2.webp',
+      '/assets/images/soles/sole-tr-3.webp',
+      '/assets/images/soles/sole-tr-4.webp',
     ],
   },
   {
@@ -122,12 +122,12 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       'Pressure-Relief Metatarsal Zone for Diabetic & Orthopedic Care',
       'Broad Stable Outsole Perimeter Base to Prevent Ankle Roll'
     ],
-    image: '/assets/images/soles/sole-medicated.jpg',
+    image: '/assets/images/soles/sole-medicated-1.webp',
     gallery: [
-      '/assets/images/soles/sole-medicated.jpg',
-      '/assets/images/soles/sole-pio-gents.jpg',
-      '/assets/images/soles/sole-ladies-jelly.jpg',
-      '/assets/images/soles/sole-tr.jpg',
+      '/assets/images/soles/sole-medicated-1.webp',
+      '/assets/images/soles/sole-medicated-2.webp',
+      '/assets/images/soles/sole-medicated-3.webp',
+      '/assets/images/soles/sole-medicated-4.webp',
     ],
   },
 ];

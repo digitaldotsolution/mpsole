@@ -76,7 +76,7 @@ function VideoCard({ item }: { item: VideoItem }) {
           style={{
             position: 'absolute',
             top: '18px',
-            left: '18px',
+            right: '18px',
             zIndex: 3
           }}
         >

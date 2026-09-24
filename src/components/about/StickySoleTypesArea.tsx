@@ -60,7 +60,7 @@ export default function StickySoleTypesArea() {
         pinSpacing: true,
         scrub: 0.8,
         pinType: ScrollSmoother.get() ? "transform" : "fixed",
-        onUpdate: (self) => {
+        onUpdate: (self: any) => {
           const idx = Math.min(total - 1, Math.floor(self.progress * total))
           setActiveIndex(idx)
         },
@@ -75,9 +75,9 @@ export default function StickySoleTypesArea() {
   const currentSole = changing_soles[activeIndex]
 
   return (
-    <section 
-      ref={sectionRef} 
-      id="services" 
+    <section
+      ref={sectionRef}
+      id="services"
       className="services-area"
       style={{ paddingBottom: '0px' }}
     >
@@ -85,7 +85,16 @@ export default function StickySoleTypesArea() {
         <div className="row">
           <div className="col-xl-12 col-lg-12">
             <div className="section-title section-black-title">
-              <h2>Our Manufacturing Journey (1990 – Present)</h2>
+              <h2 style={{
+                fontSize: 'clamp(22px, 3.1vw, 44px)',
+                lineHeight: '1.2',
+                marginBottom: '20px',
+                letterSpacing: '0.5px'
+              }}>
+                <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                  Our Manufacturing Journey (1990 – Present)
+                </span>
+              </h2>
             </div>
           </div>
         </div>
@@ -143,17 +152,17 @@ export default function StickySoleTypesArea() {
           <div className="col-lg-6 col-md-6 mb-30">
             <div className="service-item" style={{ height: '100%', margin: 0, padding: '50px 40px' }}>
               <i className="ri-arrow-right-up-line" style={{ top: '45px', right: '35px' }}></i>
-              <div 
+              <div
                 key={currentSole.step}
                 style={{
                   animation: 'smoothCardFade 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', minHeight: '36px', marginBottom: '25px' }}>
-                  <h5 style={{ 
+                  <h5 style={{
                     margin: 0,
-                    background: '#070707', 
-                    color: '#ffffff', 
+                    background: '#070707',
+                    color: '#ffffff',
                     borderColor: '#070707',
                     display: 'inline-block',
                   }}>
