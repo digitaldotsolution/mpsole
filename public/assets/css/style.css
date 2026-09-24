@@ -2071,9 +2071,6 @@ ul.extra-skills li i {
 .portfolio-box:hover img {
     -webkit-transform: scale(1.04);
     transform: scale(1.04);
-    -webkit-filter: blur(1.5px);
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1.5" /></filter></svg>#filter');
-    filter: blur(1.5px)
 }
 
 .portfolio-box:hover .portfolio-caption {
@@ -2957,9 +2954,6 @@ body.loaded {
 .blog-post-box .blog-post-img:hover img {
     -webkit-transform: scale(1.04);
     transform: scale(1.04);
-    -webkit-filter: blur(1.5px);
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1.5" /></filter></svg>#filter');
-    filter: blur(1.5px)
 }
 
 .blog-post-caption {
