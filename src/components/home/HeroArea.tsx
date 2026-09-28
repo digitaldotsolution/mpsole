@@ -58,7 +58,7 @@ export default function HeroArea() {
                   letterSpacing: '-1.5px',
                   marginBottom: '10px',
                 }}>
-                  MP SOLE®
+                  MP SOLE<span style={{ fontSize: '0.28em', verticalAlign: 'super', marginLeft: '6px', fontWeight: 600 }}>®</span>
                 </h2>
                 <h4 className="hero-sole-title">
                   <span className="static-prefix" style={{ color: '#1a1a1a' }}>

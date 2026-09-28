@@ -28,8 +28,8 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     durometer: 'Shore 50-55A (Lightweight Resilience)',
     material: 'High-Density Liquid Polyurethane (PU) Injection',
     energyRebound: '75% Comfort Shock Absorption',
-    moq: '500 Pairs per Mold Size',
-    leadTime: '12-16 Days Tooling / 25 Days Mass Run',
+    moq: '300 - 500 Pairs (Flexible for Trial Orders)',
+    leadTime: '7-12 Days Tooling / 15-20 Days Production',
     desc: "Engineered specifically for men's executive dress shoes, daily formal footwear, and premium leather boots. Formulated with high-grade micro-cellular polyurethane to deliver featherlight weight, exceptional flex resistance, and zero bottom cracking across continuous heavy use.",
     detailedDesc: "Our Gents PU Sole formulation balances structural firmness with all-day foot support. Using automated low-pressure and high-pressure liquid PU injection machines, the compound forms a dense outer skin that resists abrasion while maintaining an air-cushioned micro-cellular inner core. Enhanced with premium anti-hydrolysis additives to withstand humid climates and prevent sole crumble, guaranteeing over 250,000 continuous flex cycles.",
     features: [
@@ -56,8 +56,8 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     durometer: 'Shore 60A (Supple Fashion Flex)',
     material: 'Virgin Transparent PVC / Thermoplastic Jelly Compound',
     energyRebound: '68% Elastic Return',
-    moq: '500 Pairs per Colorway',
-    leadTime: '10-14 Days Tooling / 20 Days Mass Run',
+    moq: '300 - 500 Pairs (Custom Colors Available)',
+    leadTime: '7-10 Days Tooling / 12-15 Days Production',
     desc: "Designed for trendy women's sandals, elegant flats, and chic fashion footwear. Features crystal-clear transparency, glossy finish, and high-tensile elasticity that flexes naturally with every step without whitening or stiffness.",
     detailedDesc: "The Ladies Jelly Sole line offers unmatched clarity and color versatility for high-street fashion labels. Molded from non-toxic, virgin-grade clear thermoplastic compound, it allows custom tinting in smoky black, pastel hues, or glitter infusion. The slip-resistant micro-tread pattern provides secure grip on smooth tiles, while its soft tactile hand feel ensures blister-free all-day wear.",
     features: [
@@ -70,8 +70,6 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     gallery: [
       '/assets/images/soles/sole-ladies-jelly-1.webp',
       '/assets/images/soles/sole-ladies-jelly-2.webp',
-      '/assets/images/soles/sole-ladies-jelly-3.webp',
-      '/assets/images/soles/sole-ladies-jelly-4.webp',
     ],
   },
   {
@@ -84,8 +82,8 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     durometer: 'Shore 62A (High-Grip Toughness)',
     material: 'Premium Thermoplastic Rubber (TR) Compound',
     energyRebound: '72% Kinetic Impact Absorption',
-    moq: '500 Pairs per Mold Size',
-    leadTime: '12-15 Days Tooling / 25 Days Mass Run',
+    moq: '300 - 500 Pairs (Custom Logos / Sizes)',
+    leadTime: '10-14 Days Tooling / 15-20 Days Production',
     desc: 'The industry benchmark for durable sneakers, rugged casual shoes, and outdoor boots. Thermoplastic Rubber (TR) combines the superior grip and abrasion resilience of rubber with the injection efficiency of thermoplastics for maximum longevity.',
     detailedDesc: 'Our T.R Sole formulation is engineered for brands demanding high abrasion performance and dependable grip across extreme temperatures (-20°C to +50°C). Unlike conventional PVC soles, TR maintains flexible traction without freezing stiff in winter or turning gummy in summer heat. It easily bonds with all standard shoe adhesives, offering deep tread definition, sharp mold edging, and two-tone color injection capabilities.',
     features: [
@@ -112,8 +110,8 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     durometer: 'Shore 35-40C (Ultra-Plush Therapeutic Rebound)',
     material: 'Bio-Engineered Memory Polymer & Shock-Absorbing EVA/PU',
     energyRebound: '85% Peak Shock Redistribution',
-    moq: '300 Pairs per Size Mold',
-    leadTime: '12-15 Days Tooling / 25 Days Mass Run',
+    moq: '200 - 300 Pairs (Wholesale & Bulk Friendly)',
+    leadTime: '7-10 Days Tooling / 12-15 Days Production',
     desc: 'Engineered specifically for therapeutic footwear, diabetic care, plantar fasciitis relief, and medical professionals on their feet all day. Features biomechanically tuned anatomical arch support, deep heel cupping, and pressure-dispersing cushioning.',
     detailedDesc: 'The Medicated Sole formulation is crafted to minimize joint strain, plantar stress, and lumbar fatigue. Featuring calibrated dual-zone durometers, it combines an ultra-soft shock-dispersing heel cavity with a rigid midfoot torsional shank that guides proper walking gait. Clinically approved for diabetic footwear and orthopedic doctor-recommended shoes, it absorbs up to 85% of ground strike shock.',
     features: [

@@ -20,6 +20,8 @@
 .DS_Store
 *.pem
 *.zip
+/Forvideo/
+/public/frames_backup/
 
 # debug
 npm-debug.log*

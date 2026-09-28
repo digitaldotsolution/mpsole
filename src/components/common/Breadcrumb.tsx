@@ -2,7 +2,28 @@
 import React from 'react'
 
 export default function Breadcrumb({ title, subtitle, style_2, style_3, style_4, titleStyle }: any) {
-  const isLong = title && title.length > 25;
+  const isLong = typeof title === 'string' && title.length > 25;
+
+  const renderTitle = (t: any) => {
+    if (typeof t === 'string' && t.includes('®')) {
+      const parts = t.split('®');
+      return (
+        <>
+          {parts.map((part, index) => (
+            <React.Fragment key={index}>
+              {part}
+              {index < parts.length - 1 && (
+                <span style={{ fontSize: '0.28em', verticalAlign: 'super', marginLeft: '6px', fontWeight: 600 }}>
+                  ®
+                </span>
+              )}
+            </React.Fragment>
+          ))}
+        </>
+      );
+    }
+    return t;
+  };
 
   return (
     <>
@@ -24,7 +45,7 @@ export default function Breadcrumb({ title, subtitle, style_2, style_3, style_4,
                   ...titleStyle
                 }}
               >
-                {title}
+                {renderTitle(title)}
               </h2>
               {subtitle && <p style={{ padding: "0 20px", maxWidth: "800px", margin: "0 auto" }}>{subtitle}</p>}
               {style_2 &&

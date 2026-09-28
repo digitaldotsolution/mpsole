@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollSmoother, ScrollTrigger } from "@/plugins";
 
-const TOTAL_FRAMES = 117;
+const TOTAL_FRAMES = 108;
 // Persistent module-level cache so images remain ready across Next.js route changes
 const frameImagesCache: HTMLImageElement[] = [];
 
@@ -195,29 +195,16 @@ export default function ShoeSoleScroller() {
         position: 'relative',
         width: '100%',
         height: '100vh',
-        backgroundColor: '#0a0a0c',
-        color: '#ffffff',
+        background: 'linear-gradient(to bottom, #d6d6d6 0%, #dedede 40%, #e6e6e6 100%)',
+        color: '#111111',
         overflow: 'hidden',
         alignItems: 'center',
         justifyContent: 'center',
+        borderTop: '1px solid rgba(0, 0, 0, 0.08)',
+        borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
       }}
     >
-      {/* Background Soft Amber Glow */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '700px',
-          height: '700px',
-          background: 'radial-gradient(circle, rgba(200, 168, 122, 0.12) 0%, rgba(10, 10, 12, 0) 70%)',
-          filter: 'blur(80px)',
-          pointerEvents: 'none',
-        }}
-      />
-
-      {/* Main High-Performance Canvas */}
+      {/* Main High-Performance Canvas with soft feathered edges for seamless blending */}
       <canvas
         ref={canvasRef}
         style={{
@@ -227,6 +214,8 @@ export default function ShoeSoleScroller() {
           height: '100%',
           objectFit: 'contain',
           zIndex: 2,
+          maskImage: 'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 60px, black calc(100% - 60px), transparent)',
         }}
       />
 
@@ -238,9 +227,10 @@ export default function ShoeSoleScroller() {
             bottom: '40px',
             left: '50%',
             transform: 'translateX(-50%)',
-            background: 'rgba(20, 20, 24, 0.9)',
+            background: 'rgba(255, 255, 255, 0.95)',
             backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
             padding: '12px 28px',
             borderRadius: '30px',
             fontSize: '13px',
@@ -252,17 +242,18 @@ export default function ShoeSoleScroller() {
             alignItems: 'center',
             gap: '8px',
             minWidth: '220px',
+            color: '#111111',
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
             <span>Loading 3D Anatomy</span>
-            <span style={{ color: '#c8a87a', fontWeight: 600 }}>{loadProgress}%</span>
+            <span style={{ color: '#966a38', fontWeight: 600 }}>{loadProgress}%</span>
           </div>
           <div
             style={{
               width: '100%',
               height: '4px',
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              backgroundColor: 'rgba(0, 0, 0, 0.08)',
               borderRadius: '2px',
               overflow: 'hidden',
             }}
@@ -272,7 +263,7 @@ export default function ShoeSoleScroller() {
               style={{
                 width: '0%',
                 height: '100%',
-                backgroundColor: '#c8a87a',
+                backgroundColor: '#966a38',
                 transition: 'width 0.1s linear',
               }}
             />
@@ -284,21 +275,21 @@ export default function ShoeSoleScroller() {
       <div
         style={{
           position: 'absolute',
-          top: '150px',
+          bottom: '170px',
           left: '60px',
           zIndex: 5,
           pointerEvents: 'none',
-          maxWidth: '440px',
+          maxWidth: '460px',
         }}
       >
         <span
           ref={stageBadgeRef}
           style={{
             display: 'inline-block',
-            fontSize: '11px',
+            fontSize: '12px',
             textTransform: 'uppercase',
             letterSpacing: '2.5px',
-            color: '#c8a87a',
+            color: '#966a38',
             fontWeight: 700,
             marginBottom: '8px',
           }}
@@ -309,11 +300,11 @@ export default function ShoeSoleScroller() {
           ref={stageTitleRef}
           style={{
             fontSize: '38px',
-            fontWeight: 700,
+            fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: '-0.5px',
             margin: 0,
-            color: '#ffffff',
+            color: '#111111',
           }}
         >
           Precision Engineered Footwear.
@@ -323,8 +314,9 @@ export default function ShoeSoleScroller() {
           style={{
             fontSize: '15px',
             lineHeight: 1.5,
-            color: 'rgba(255, 255, 255, 0.65)',
+            color: '#444444',
             marginTop: '12px',
+            fontWeight: 500,
           }}
         >
           Designed for race-ready resilience and zero-gravity comfort under continuous load.
@@ -350,47 +342,50 @@ export default function ShoeSoleScroller() {
       >
         <div
           style={{
-            background: 'rgba(255, 255, 255, 0.05)',
+            background: 'rgba(255, 255, 255, 0.9)',
             backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
             padding: '12px 20px',
             borderRadius: '12px',
             minWidth: '260px',
           }}
         >
-          <div style={{ fontSize: '11px', color: '#c8a87a', fontWeight: 600 }}>LAYER 01</div>
-          <div style={{ fontSize: '14px', fontWeight: 600, color: '#fff' }}>Orthotic Cushion Insole</div>
-          <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>Adaptive memory contouring</div>
+          <div style={{ fontSize: '11px', color: '#966a38', fontWeight: 700 }}>LAYER 01</div>
+          <div style={{ fontSize: '14px', fontWeight: 700, color: '#111111' }}>Orthotic Cushion Insole</div>
+          <div style={{ fontSize: '12px', color: '#555555' }}>Adaptive memory contouring</div>
         </div>
 
         <div
           style={{
-            background: 'rgba(255, 255, 255, 0.05)',
+            background: 'rgba(255, 255, 255, 0.9)',
             backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
             padding: '12px 20px',
             borderRadius: '12px',
             minWidth: '260px',
           }}
         >
-          <div style={{ fontSize: '11px', color: '#c8a87a', fontWeight: 600 }}>LAYER 02</div>
-          <div style={{ fontSize: '14px', fontWeight: 600, color: '#fff' }}>Carbon Propulsion Plate</div>
-          <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>Dynamic torsional energy return</div>
+          <div style={{ fontSize: '11px', color: '#966a38', fontWeight: 700 }}>LAYER 02</div>
+          <div style={{ fontSize: '14px', fontWeight: 700, color: '#111111' }}>Carbon Propulsion Plate</div>
+          <div style={{ fontSize: '12px', color: '#555555' }}>Dynamic torsional energy return</div>
         </div>
 
         <div
           style={{
-            background: 'rgba(255, 255, 255, 0.05)',
+            background: 'rgba(255, 255, 255, 0.9)',
             backdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
             padding: '12px 20px',
             borderRadius: '12px',
             minWidth: '260px',
           }}
         >
-          <div style={{ fontSize: '11px', color: '#c8a87a', fontWeight: 600 }}>LAYER 03</div>
-          <div style={{ fontSize: '14px', fontWeight: 600, color: '#fff' }}>Traction Gum Rubber Outsole</div>
-          <div style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>Multi-directional grip lugs</div>
+          <div style={{ fontSize: '11px', color: '#966a38', fontWeight: 700 }}>LAYER 03</div>
+          <div style={{ fontSize: '14px', fontWeight: 700, color: '#111111' }}>Traction Gum Rubber Outsole</div>
+          <div style={{ fontSize: '12px', color: '#555555' }}>Multi-directional grip lugs</div>
         </div>
       </div>
 
@@ -402,7 +397,7 @@ export default function ShoeSoleScroller() {
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 5,
-          color: 'rgba(255, 255, 255, 0.4)',
+          color: '#555555',
           fontSize: '11px',
           letterSpacing: '2px',
           textTransform: 'uppercase',
@@ -413,12 +408,12 @@ export default function ShoeSoleScroller() {
           pointerEvents: 'none',
         }}
       >
-        <span>Scroll to explore anatomy</span>
+        <span style={{ fontWeight: 600 }}>Scroll to explore anatomy</span>
         <div
           style={{
-            width: '1px',
+            width: '2px',
             height: '24px',
-            background: 'linear-gradient(to bottom, rgba(200, 168, 122, 0.8), transparent)',
+            background: 'linear-gradient(to bottom, #966a38, transparent)',
           }}
         />
       </div>
