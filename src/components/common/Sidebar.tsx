@@ -14,7 +14,7 @@ export default function Sidebar({ open, setOpen }: any) {
           </div>
           <div className="sidebar__content mt-40 mb-20">
             <div className="sidebar__logo mb-30">
-              <a href="/"><img src="/assets/images/logos/mp-sole-white.png" alt="MP Sole®" style={{ height: "45px", width: "auto" }} /></a>
+              <a href="/"><img src="/assets/images/logos/mp-sole-white.png" alt="MP Sole® - Shoe Sole Manufacturer in Pakistan" style={{ height: "45px", width: "auto" }} /></a>
             </div>
             <div className="mobile-menu fix mean-container">
               <MobileMenu />

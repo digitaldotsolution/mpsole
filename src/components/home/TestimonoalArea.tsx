@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { db } from '@/lib/firebase'
-import { collection, addDoc, getDocs, query, orderBy, serverTimestamp } from 'firebase/firestore'
+import { collection, addDoc, getDocs, query, orderBy, serverTimestamp, onSnapshot } from 'firebase/firestore'
 
 interface Testimonial {
   id?: string
@@ -10,6 +10,7 @@ interface Testimonial {
   location: string
   text: string
   rating: number
+  order?: number
 }
 
 const initialTestimonials: Testimonial[] = [
@@ -55,34 +56,43 @@ export default function TestimonoalArea() {
   useEffect(() => {
     setMounted(true)
 
-    const fetchTestimonials = async () => {
-      try {
-        const q = query(collection(db, 'testimonials'), orderBy('createdAt', 'desc'))
-        const snap = await getDocs(q)
-        if (!snap.empty) {
-          const list: Testimonial[] = []
-          snap.forEach((doc) => {
-            const data = doc.data()
-            if (data.status !== 'hidden') {
-              list.push({
-                id: doc.id,
-                name: data.name || 'Anonymous Client',
-                location: data.location || 'Pakistan',
-                text: data.text || '',
-                rating: data.rating || 5,
-              })
-            }
-          })
-          if (list.length > 0) {
-            setTestimonials(list)
-          }
-        }
-      } catch (e) {
-        console.warn('Using default testimonials:', e)
+    // Real-time listener for reviews from Central CRM
+    const unsubscribe = onSnapshot(collection(db, 'reviews'), (snapshot) => {
+      if (snapshot.empty) {
+        setTestimonials(initialTestimonials)
+        return
       }
-    }
 
-    fetchTestimonials()
+      const list: Testimonial[] = []
+      snapshot.forEach((doc) => {
+        const data = doc.data()
+        const website = (data.targetWebsite || '').trim()
+        const isTargetForMpSole = website === 'MP Sole' || website === 'All Websites' || website === 'Website 2 (Next.js)' || (data.platform && data.platform.includes('Sole'))
+        
+        if (data.status === 'Approved' && isTargetForMpSole) {
+          list.push({
+            id: doc.id,
+            name: data.reviewerName || data.name || 'Footwear Client',
+            location: data.company || data.location || 'Pakistan',
+            text: data.text || '',
+            rating: typeof data.rating === 'number' ? data.rating : 5,
+            order: typeof data.order === 'number' ? data.order : 99,
+          })
+        }
+      })
+
+      if (list.length > 0) {
+        list.sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+        setTestimonials(list)
+      } else {
+        setTestimonials(initialTestimonials)
+      }
+    }, (err) => {
+      console.warn('Realtime reviews listener notice (using initial testimonials):', err)
+      setTestimonials(initialTestimonials)
+    })
+
+    return () => unsubscribe()
   }, [])
 
   const renderStars = (count: number = 5) => (
@@ -117,13 +127,35 @@ export default function TestimonoalArea() {
     setIsSubmitted(true)
 
     try {
-      // 1. Save review in Firestore database
+      // 1. Save into Central CRM reviews collection
+      try {
+        await addDoc(collection(db, 'reviews'), {
+          reviewerName: fullName.trim(),
+          position: 'Footwear Partner',
+          company: location.trim() || 'Pakistan',
+          platform: 'MP Sole Website',
+          rating: selectedRating,
+          text: reviewText.trim(),
+          verified: true,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          status: 'Approved',
+          featured: true,
+          order: 1,
+          targetWebsite: 'MP Sole',
+        })
+      } catch (crmErr) {
+        console.warn('Central CRM reviews sync notice:', crmErr)
+      }
+
+      // 2. Also save into local testimonials collection for compatibility
       await addDoc(collection(db, 'testimonials'), {
         name: fullName.trim(),
         location: location.trim() || "Pakistan",
         text: reviewText.trim(),
         rating: selectedRating,
         status: 'approved',
+        targetWebsite: 'MP Sole',
         createdAt: new Date().toISOString(),
         timestamp: serverTimestamp(),
       })

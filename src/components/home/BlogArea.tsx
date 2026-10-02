@@ -22,7 +22,7 @@ export default function BlogArea() {
                   <Link href={`/sole-types/${sole.slug}`}>
                     <img
                       src={sole.image}
-                      alt={sole.title}
+                      alt={`${sole.title} - Shoe Sole Manufacturer Pakistan`}
                       style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.5s ease' }}
                     />
                   </Link>

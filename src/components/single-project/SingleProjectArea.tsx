@@ -30,7 +30,7 @@ export default function SingleProjectArea({ sole }: Props) {
           <div className="container">
             <img
               src={sole.image}
-              alt={sole.title}
+              alt={`${sole.title} - High-Precision Footwear Sole Manufacturer Pakistan`}
               style={{
                 maxHeight: '520px',
                 width: 'auto',
@@ -201,8 +201,8 @@ export default function SingleProjectArea({ sole }: Props) {
                   <a className="theme-btn" href="/#contact">
                     Request Mold Sample & RFQ <i className="ri-arrow-right-line"></i>
                   </a>
-                  <a className="theme-btn theme-btn-two" href="/#sole-types">
-                    View All Sole Types
+                  <a className="theme-btn theme-btn-two" href="/contact">
+                    Request B2B Quote
                   </a>
                 </div>
               </div>

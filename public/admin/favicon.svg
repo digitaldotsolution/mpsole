@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Crisp Circular White Backing Disc -->
+  <circle cx="32" cy="32" r="30" fill="#FFFFFF"/>
+  <!-- Left Orange Arc -->
+  <path d="M 32 8 A 24 24 0 0 0 32 56" fill="none" stroke="#FF6A00" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Right Navy Arc -->
+  <path d="M 32 8 A 24 24 0 0 1 32 56" fill="none" stroke="#0B1B3D" stroke-width="6.5" stroke-linecap="round"/>
+  <!-- Center Bold Two-Tone "N" -->
+  <!-- Left Orange Stem -->
+  <path d="M 21 44 L 21 20 L 27.5 20 L 27.5 44 Z" fill="#FF6A00"/>
+  <!-- Right Navy Stem -->
+  <path d="M 36.5 44 L 36.5 20 L 43 20 L 43 44 Z" fill="#0B1B3D"/>
+  <!-- Diagonal -->
+  <path d="M 24 20 L 38 41 L 38 44 L 33 44 L 24 25 Z" fill="#FF6A00"/>
+  <path d="M 27 20 L 40 40 L 40 20 L 36.5 20 L 36.5 35 L 29 20 Z" fill="#0B1B3D"/>
+</svg>

@@ -23,7 +23,7 @@ export default function HeaderOne() {
                       <Link href="/">
                         <img 
                           src={sticky ? "/assets/images/logos/mp-sole-white.png" : "/assets/images/logos/mp-sole-black.png"} 
-                          alt="MP Sole®" 
+                          alt="MP Sole® - Shoe Sole Manufacturer in Pakistan" 
                           style={{ height: "55px", width: "auto", transition: "all 0.3s ease" }} 
                         />
                       </Link>

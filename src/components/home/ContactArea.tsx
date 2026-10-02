@@ -9,7 +9,7 @@ export default function ContactArea() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [quantity, setQuantity] = useState('100-500');
-  const [soleType, setSoleType] = useState('Pio Sole Gents');
+  const [soleType, setSoleType] = useState('P.U Sole Gents');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,7 +21,24 @@ export default function ContactArea() {
     setSubmitStatus('idle');
 
     try {
-      // 1. Save lead into Firebase Firestore database
+      // 1. Save lead into Central CRM leads collection (for Central CRM Cockpit)
+      try {
+        await addDoc(collection(db, 'leads'), {
+          name: name.trim(),
+          email: email.trim(),
+          phone: "",
+          subject: subject.trim() || `Production Inquiry: ${soleType}`,
+          status: 'New',
+          targetWebsite: 'MP Sole',
+          notes: `Sole Formulation: ${soleType}, Order Quantity: ${quantity}. Message: ${message.trim()}`,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+        });
+      } catch (crmLeadErr) {
+        console.warn('Central CRM lead sync notice:', crmLeadErr);
+      }
+
+      // 2. Also save into local inquiries collection for backward compatibility
       await addDoc(collection(db, 'inquiries'), {
         name: name.trim(),
         email: email.trim(),
@@ -30,6 +47,7 @@ export default function ContactArea() {
         subject: subject.trim(),
         message: message.trim(),
         status: 'New',
+        targetWebsite: 'MP Sole',
         createdAt: new Date().toISOString(),
         timestamp: serverTimestamp(),
       });
@@ -77,7 +95,7 @@ export default function ContactArea() {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title section-black-title wow fadeInUp delay-0-2s">
-                <h2>Request a Production Run</h2>
+                <h2>Request a Production Run — Shoe Sole Supplier Pakistan</h2>
               </div>
             </div>
           </div>
@@ -212,7 +230,7 @@ export default function ContactArea() {
                           onChange={(e) => setSoleType(e.target.value)}
                           style={{ backgroundColor: '#18181b', color: '#ffffff', border: '1px solid rgba(255,255,255,0.15)' }}
                         >
-                          <option value="Pio Sole Gents">Pio Sole Gents (Micro-Cellular PU)</option>
+                          <option value="P.U Sole Gents">P.U Sole Gents (Micro-Cellular Polyurethane)</option>
                           <option value="Ladies Jelly Sole">Ladies Jelly Sole (Crystal PVC Compound)</option>
                           <option value="T.R Sole">T.R Sole (High-Traction Thermoplastic Rubber)</option>
                           <option value="Medicated Sole">Medicated Sole (Orthopedic Cushion & Arch Support)</option>

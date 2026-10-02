@@ -18,7 +18,7 @@ export default function Blog() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <Breadcrumb title="Blogs" style_4={true} />
+            <Breadcrumb title="Shoe Sole Manufacturing Blog" subtitle="Stories, technical insights, and material innovations from MP Sole®." />
             <PostboxArea setIsVideoOpen={setIsVideoOpen} />
           </main>
           <FooterOne />

@@ -5,8 +5,11 @@ import type { Metadata } from 'next'
 import Home from '@/components/home'
 import Wrapper from '@/layouts/Wrapper'
 export const metadata: Metadata = {
-  title: 'MP Sole® - High-Precision Footwear Sole Manufacturer & Tooling',
-  description: 'MP Sole® is an industry-leading contract manufacturer and compounder of high-performance footwear outsoles, carbon-fiber plates, and ergonomic midsoles for athletic and luxury brands worldwide.',
+  title: 'MP Sole® - Leading Shoe Sole Manufacturer in Pakistan | Tooling & Production',
+  description: 'MP Sole® is Pakistan premier footwear shoe sole manufacturer since 1990. We specialize in high-precision PU, TR, Ladies Jelly, and Medicated soles for brands in Pakistan and worldwide.',
+  alternates: {
+    canonical: 'https://mpsolemanufacture.com/',
+  },
 }
 
 

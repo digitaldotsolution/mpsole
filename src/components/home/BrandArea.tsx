@@ -34,12 +34,12 @@ export default function BrandArea() {
               <div className="company-list">
                 <div className="scroller" data-direction="left" data-speed="slow">
                   <div className="scroller__inner">
-                    <img src="assets/images/client-logos/partner1.png" alt="Company" />
-                    <img src="assets/images/client-logos/partner2.png" alt="Company" />
-                    <img src="assets/images/client-logos/partner3.png" alt="Company" />
-                    <img src="assets/images/client-logos/partner4.png" alt="Company" />
-                    <img src="assets/images/client-logos/partner5.png" alt="Company" />
-                    <img src="assets/images/client-logos/partner1.png" alt="Company" />
+                    <img src="assets/images/client-logos/partner1.png" alt="Footwear Brand Partner 1 - MP Sole® Client" />
+                    <img src="assets/images/client-logos/partner2.png" alt="Footwear Brand Partner 2 - MP Sole® Client" />
+                    <img src="assets/images/client-logos/partner3.png" alt="Footwear Brand Partner 3 - MP Sole® Client" />
+                    <img src="assets/images/client-logos/partner4.png" alt="Footwear Brand Partner 4 - MP Sole® Client" />
+                    <img src="assets/images/client-logos/partner5.png" alt="Footwear Brand Partner 5 - MP Sole® Client" />
+                    <img src="assets/images/client-logos/partner1.png" alt="Footwear Brand Partner - Athletic & Casual Shoes" />
                   </div>
                 </div>
               </div>

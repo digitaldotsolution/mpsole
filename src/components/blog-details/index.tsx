@@ -1,18 +1,16 @@
 import React from 'react'
-import Breadcrumb from '../common/Breadcrumb'
 import BlogDetailsArea from './BlogDetailsArea'
 import HeaderOne from '@/layouts/headers/HeaderOne'
 import FooterOne from '@/layouts/footers/FooterOne'
 
-export default function BlogDetails() {
+export default function BlogDetails({ slug }: { slug?: string } = {}) {
   return (
     <>
       <HeaderOne />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <Breadcrumb title="Best Quality Shoe Sole Manufacturing in Karachi, Pakistan" />
-            <BlogDetailsArea />
+            <BlogDetailsArea slug={slug} />
           </main>
           <FooterOne />
         </div>

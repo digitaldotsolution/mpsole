@@ -1,8 +1,9 @@
 
 import React from 'react'
 
-export default function Breadcrumb({ title, subtitle, style_2, style_3, style_4, titleStyle }: any) {
+export default function Breadcrumb({ title, subtitle, style_2, style_3, style_4, titleStyle, tag = 'h1' }: any) {
   const isLong = typeof title === 'string' && title.length > 25;
+  const HeadingTag = tag as keyof JSX.IntrinsicElements;
 
   const renderTitle = (t: any) => {
     if (typeof t === 'string' && t.includes('®')) {
@@ -34,8 +35,9 @@ export default function Breadcrumb({ title, subtitle, style_2, style_3, style_4,
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-12 text-center">
-              <h2 
+              <HeadingTag 
                 style={{
+                  color: '#111111',
                   fontSize: isLong ? "clamp(24px, 3.2vw, 38px)" : undefined,
                   lineHeight: isLong ? "1.25" : undefined,
                   maxWidth: isLong ? "950px" : undefined,
@@ -46,7 +48,7 @@ export default function Breadcrumb({ title, subtitle, style_2, style_3, style_4,
                 }}
               >
                 {renderTitle(title)}
-              </h2>
+              </HeadingTag>
               {subtitle && <p style={{ padding: "0 20px", maxWidth: "800px", margin: "0 auto" }}>{subtitle}</p>}
               {style_2 &&
                 <p>A Collection of My Latest Works and Achievements: Discover the Projects that Define My Passion and Skills</p>

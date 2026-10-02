@@ -26,7 +26,7 @@ export default function ResumeArea() {
                   <span className="resume-date">2020 - 2026</span>
                   <h2>ADVANCED SOLE PRODUCTION</h2>
                   <span>Over 35 Years of Trusted Quality</span>
-                  <p>From our 1990 foundation to 2026, delivering world-class Pio Gents, Ladies Jelly, T.R, and Medicated soles with high-volume automated injection molding, ensuring superior durability and comfort for shoe brands.</p>
+                  <p>From our 1990 foundation to 2026, delivering world-class P.U Gents, Ladies Jelly, T.R, and Medicated soles with high-volume automated injection molding, ensuring superior durability and comfort for shoe brands.</p>
                 </div>
 
               </div>

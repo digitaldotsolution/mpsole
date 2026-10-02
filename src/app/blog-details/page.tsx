@@ -1,21 +1,21 @@
 
 
 import React from 'react'
-
 import type { Metadata } from 'next'
 import Wrapper from '@/layouts/Wrapper'
 import BlogDetails from '@/components/blog-details'
+
 export const metadata: Metadata = {
-  title: 'Best Quality Shoe Sole Manufacturing in Karachi, Pakistan | MP Sole®',
-  description: 'Discover best quality shoe sole manufacturing in Karachi, Pakistan. Skilled workers, strong materials & trusted quality for all shoe types.',
+  title: 'Blog Details | MP Sole®',
+  description: 'Footwear components and shoe sole manufacturing articles from MP Sole.',
 }
 
-
-
-export default function index() {
+export default function BlogDetailsPage() {
   return (
     <Wrapper>
-      <BlogDetails />
+      <React.Suspense fallback={<div className="text-center py-5"><div className="spinner-border text-success" /></div>}>
+        <BlogDetails />
+      </React.Suspense>
     </Wrapper>
   )
 }

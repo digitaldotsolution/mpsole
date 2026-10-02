@@ -16,7 +16,7 @@ export default function About() {
         <div id="smooth-content">
           <main>
             <Breadcrumb 
-              title="About MP Sole®" 
+              title="About MP Sole® Manufacture" 
               subtitle="Pioneering High-Precision Footwear Soles & Advanced Polymer Tooling Since 1990" 
             />
             <AboutArea />

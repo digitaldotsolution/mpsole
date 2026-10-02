@@ -11,8 +11,8 @@ const changing_soles = [
   },
   {
     step: "03",
-    title: "Pioneering Gents Pio & T.R Soles",
-    desc: "Recognizing the need for modern formal and rugged footwear, we developed dedicated Gents Pio (PU) and Thermoplastic Rubber (TR) formulations, setting new industry standards for grip and all-weather flexibility.",
+    title: "Pioneering Gents P.U & T.R Soles",
+    desc: "Recognizing the need for modern formal and rugged footwear, we developed dedicated Gents P.U (Polyurethane) and Thermoplastic Rubber (TR) formulations, setting new industry standards for grip and all-weather flexibility.",
   },
   {
     step: "04",

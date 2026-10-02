@@ -13,7 +13,7 @@ export default function Contact() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <Breadcrumb title="Say Hello" style_3={true} />
+            <Breadcrumb title="Contact MP Sole Manufacture" subtitle="Fill out the form below to get in touch with our sole engineering team. We respond within 24 hours." />
             <ContactArea />
           </main>
           <FooterOne />

@@ -1,15 +1,15 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-// MP Sole® Firebase Configuration
+// MP Sole® & Central CRM Unified Firebase Configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDZdA_18VfRyUQ5q5UvF8zmSDYTf9a7vxg",
-  authDomain: "mp-solewebsite.firebaseapp.com",
-  projectId: "mp-solewebsite",
-  storageBucket: "mp-solewebsite.firebasestorage.app",
-  messagingSenderId: "1079442993813",
-  appId: "1:1079442993813:web:83b0fd7937204796f8219c",
-  measurementId: "G-RW855FL0MC"
+  apiKey: "AIzaSyB8Drbav0CQIRE8aFe3fqLLDdxBqPs1Gh8",
+  authDomain: "ecomtechwebsite.firebaseapp.com",
+  projectId: "ecomtechwebsite",
+  storageBucket: "ecomtechwebsite.firebasestorage.app",
+  messagingSenderId: "473439020528",
+  appId: "1:473439020528:web:a26d4c1b1e99ec2414e935",
+  measurementId: "G-R2W89G1PPX"
 };
 
 // Initialize Firebase without duplicate app errors

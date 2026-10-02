@@ -36,7 +36,7 @@ export default function AboutArea() {
             <div className="col-lg-9 col-sm-9">
               <div className="about-content-part wow fadeInUp delay-0-2s">
                 <p style={{ fontSize: 'clamp(17px, 1.25vw, 20px)', lineHeight: '1.65' }}>
-                  MP Sole® is a high-precision footwear sole compounding and contract manufacturing facility. We engineer and mold next-generation outsoles, ergonomic midsoles, and propulsion plates for global athletic brands and luxury labels worldwide.
+                  As an industry-leading <strong>shoe sole manufacturer in Pakistan</strong> established in 1990, MP Sole® specializes in high-precision footwear sole compounding, custom mold tooling, and automated injection molding. From our advanced factory in Karachi, we engineer and supply durable PU, TR, Ladies Jelly, and Orthopedic Medicated soles to footwear brands across Pakistan and worldwide.
                 </p>
               </div>
             </div>

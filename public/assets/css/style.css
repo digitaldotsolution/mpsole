@@ -779,6 +779,7 @@ html {
     background: var(--primary-color);
 }
 
+.single-page-hero-area h1,
 .single-page-hero-area h2 {
     margin-bottom: 15px;
     font-size: 150px;

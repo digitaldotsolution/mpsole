@@ -11,7 +11,7 @@ export default function FooterOne() {
           <div className="row align-items-center mb-2 mb-md-4 pt-20">
             <div className="col-lg-6 col-md-6 col-12 text-center text-md-start">
               <Link href="/" style={{ display: 'inline-block' }}>
-                <img src="/assets/images/logos/mp-sole-black.png" alt="MP Sole®" style={{ height: "60px", width: "auto", display: "block" }} />
+                <img src="/assets/images/logos/mp-sole-black.png" alt="MP Sole® - Footwear Sole Manufacturer Pakistan" style={{ height: "60px", width: "auto", display: "block" }} />
               </Link>
             </div>
             <div className="col-lg-6 col-md-6 col-12 text-center text-md-end mt-2 mt-md-0">

@@ -1,15 +1,45 @@
 DirectoryIndex index.html
 
+<IfModule mod_mime.c>
+  AddType text/javascript .js .mjs
+  AddType text/css .css
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+  AddType image/jpeg .jpg .jpeg
+  AddType image/png .png
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HTTP Security Headers
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Static Next.js Cache Header
+  <FilesMatch "\.(js|css|webp|jpg|jpeg|png|svg|woff2|woff)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
 RewriteEngine On
+
+# 301 Permanent Redirect for /sole-types and legacy /sole-types/pio-sole-gents
+RewriteRule ^sole-types/?$ /sole-types/pu-sole-gents [R=301,L]
+RewriteRule ^sole-types/pio-sole-gents/?$ /sole-types/pu-sole-gents [R=301,L]
 
 # If file or folder exists, serve directly
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Serve .html version if exists (clean URLs e.g. /about -> about.html)
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html [L]
+# Direct /admin requests to the central admin cockpit
+RewriteRule ^admin/?$ /admin/index.html [L]
+
+# Clean Blog Slug URLs: /blog/slug-name -> /blog-details.html?slug=slug-name
+RewriteRule ^blog/([^/]+)/?$ /blog-details.html?slug=$1 [QSA,L]
 
 # Custom 404 Page
 ErrorDocument 404 /404.html

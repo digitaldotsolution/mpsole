@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollSmoother, ScrollTrigger } from "@/plugins";
 
-const TOTAL_FRAMES = 108;
+const TOTAL_FRAMES = 116;
 // Persistent module-level cache so images remain ready across Next.js route changes
 const frameImagesCache: HTMLImageElement[] = [];
 
@@ -46,9 +46,9 @@ export default function ShoeSoleScroller() {
     const canvasCtx = canvas.getContext('2d');
     if (!canvasCtx) return;
 
-    // Fixed canvas buffer resolution (1280 x 720 matches images)
-    canvas.width = 1280;
-    canvas.height = 720;
+    // Fixed canvas buffer resolution (1920 x 1080 matches native HD frames)
+    canvas.width = 1920;
+    canvas.height = 1080;
 
     let images: HTMLImageElement[] = frameImagesCache;
     let loadedCount = frameImagesCache.length;
@@ -64,7 +64,7 @@ export default function ShoeSoleScroller() {
     const render = (targetFrame: number) => {
       const img = images[targetFrame - 1];
       if (!img || !img.complete) return;
-      canvasCtx.drawImage(img, 0, 0, 1280, 720);
+      canvasCtx.drawImage(img, 0, 0, 1920, 1080);
     };
 
     // Smooth non-blocking V-Sync frame queue
@@ -122,28 +122,28 @@ export default function ShoeSoleScroller() {
       let currentStage = 1;
       const updateStageInfo = (frame: number) => {
         let stage = 1;
-        if (frame >= 75) stage = 3;
-        else if (frame >= 35) stage = 2;
+        if (frame >= 85) stage = 3;
+        else if (frame >= 40) stage = 2;
 
         if (stage !== currentStage) {
           currentStage = stage;
           if (stageBadgeRef.current && stageTitleRef.current && stageDescRef.current) {
             if (stage === 1) {
-              stageBadgeRef.current.innerText = 'STAGE 01 / FULL CHASSIS ROTATION';
-              stageTitleRef.current.innerText = 'Precision Engineered Footwear.';
-              stageDescRef.current.innerText = 'Designed for race-ready resilience and zero-gravity comfort under continuous load.';
+              stageBadgeRef.current.innerText = 'STAGE 01 / EXPLODED CHASSIS ANATOMY';
+              stageTitleRef.current.innerText = '3-Layer Precision Sole Engineering.';
+              stageDescRef.current.innerText = 'Breathable engineered upper, orthotic pressure-point insole, and high-traction lug outsole.';
             } else if (stage === 2) {
-              stageBadgeRef.current.innerText = 'STAGE 02 / SOLE DECOUPLING';
-              stageTitleRef.current.innerText = 'Autonomous Sole Extraction.';
-              stageDescRef.current.innerText = 'The footwear sole seamlessly separates from the upper chassis, engineered with aerodynamic precision.';
+              stageBadgeRef.current.innerText = 'STAGE 02 / PRECISION TOOLING LOCK';
+              stageTitleRef.current.innerText = 'Zero-Tolerance Layer Coupling.';
+              stageDescRef.current.innerText = 'High-density polymer tooling guides the insole seamlessly into the molded sole cavity.';
             } else {
-              stageBadgeRef.current.innerText = 'STAGE 03 / 3-LAYER ANATOMY';
-              stageTitleRef.current.innerText = '3-Layer Kinetic Propulsion.';
-              stageDescRef.current.innerText = 'Orthotic memory insole, carbon propulsion plate, and high-traction gum rubber outsole floating as one.';
+              stageBadgeRef.current.innerText = 'STAGE 03 / ASSEMBLED MASTERPIECE';
+              stageTitleRef.current.innerText = 'Race-Ready Finished Footwear.';
+              stageDescRef.current.innerText = 'Engineered for maximum stride energy return, all-terrain durability, and all-day comfort.';
             }
           }
           if (specsCalloutRef.current) {
-            if (stage === 3) {
+            if (stage === 1) {
               specsCalloutRef.current.style.opacity = '1';
               specsCalloutRef.current.style.transform = 'translateY(0)';
             } else {
@@ -275,31 +275,31 @@ export default function ShoeSoleScroller() {
       <div
         style={{
           position: 'absolute',
-          bottom: '170px',
-          left: '60px',
+          bottom: '220px',
+          left: '40px',
           zIndex: 5,
           pointerEvents: 'none',
-          maxWidth: '460px',
+          maxWidth: '330px',
         }}
       >
         <span
           ref={stageBadgeRef}
           style={{
             display: 'inline-block',
-            fontSize: '12px',
+            fontSize: '11px',
             textTransform: 'uppercase',
             letterSpacing: '2.5px',
             color: '#966a38',
             fontWeight: 700,
-            marginBottom: '8px',
+            marginBottom: '6px',
           }}
         >
-          STAGE 01 / FULL CHASSIS ROTATION
+          STAGE 01 / EXPLODED CHASSIS ANATOMY
         </span>
         <h2
           ref={stageTitleRef}
           style={{
-            fontSize: '38px',
+            fontSize: '32px',
             fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: '-0.5px',
@@ -307,19 +307,20 @@ export default function ShoeSoleScroller() {
             color: '#111111',
           }}
         >
-          Precision Engineered Footwear.
+          3-Layer Precision Sole Engineering.
         </h2>
         <p
           ref={stageDescRef}
           style={{
-            fontSize: '15px',
+            fontSize: '14px',
             lineHeight: 1.5,
             color: '#444444',
-            marginTop: '12px',
+            marginTop: '10px',
             fontWeight: 500,
+            maxWidth: '310px',
           }}
         >
-          Designed for race-ready resilience and zero-gravity comfort under continuous load.
+          Breathable engineered upper, orthotic pressure-point insole, and high-traction lug outsole.
         </p>
       </div>
 

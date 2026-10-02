@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 
 const SOLE_TYPES_LIST = [
-  "Pio Sole Gents",
+  "P.U Sole Gents",
   "Ladies Jelly Sole",
   "T.R Sole",
   "Medicated Sole"
@@ -52,14 +52,18 @@ export default function HeroArea() {
           <div className="row">
             <div className="col-lg-12">
               <div className="hero-content wow fadeInUp text-center delay-0-2s">
-                <h2 style={{
+                <h1 style={{
                   fontSize: 'clamp(46px, 10.5vw, 145px)',
                   lineHeight: '1.05',
                   letterSpacing: '-1.5px',
                   marginBottom: '10px',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  color: '#111111',
                 }}>
                   MP SOLE<span style={{ fontSize: '0.28em', verticalAlign: 'super', marginLeft: '6px', fontWeight: 600 }}>®</span>
-                </h2>
+                  <span className="visually-hidden"> - Shoe Sole Manufacturer in Pakistan</span>
+                </h1>
                 <h4 className="hero-sole-title">
                   <span className="static-prefix" style={{ color: '#1a1a1a' }}>
                     SOLE FORMULATION —
@@ -128,7 +132,12 @@ export default function HeroArea() {
             </div>
             <div className="col-lg-6">
               <div className="hero-image">
-                <img src="/assets/images/about/hero-sole.webp" alt="MP SOLE®" />
+                <img 
+                  src="/assets/images/about/hero-sole.webp" 
+                  alt="MP Sole® - Shoe Sole Manufacturer" 
+                  loading="eager"
+                  fetchPriority="high"
+                />
               </div>
             </div>
             <div className="col-lg-3 pt-30">
