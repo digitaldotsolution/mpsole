@@ -134,7 +134,7 @@ export default function HeroArea() {
               <div className="hero-image">
                 <img 
                   src="/assets/images/about/hero-sole.webp" 
-                  alt="MP Sole® - Shoe Sole Manufacturer" 
+                  alt="Footwear Sole Manufacturer & Supplier in Pakistan" 
                   loading="eager"
                   fetchPriority="high"
                 />

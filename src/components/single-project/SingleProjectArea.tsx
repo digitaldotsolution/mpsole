@@ -30,7 +30,7 @@ export default function SingleProjectArea({ sole }: Props) {
           <div className="container">
             <img
               src={sole.image}
-              alt={`${sole.title} - High-Precision Footwear Sole Manufacturer Pakistan`}
+              alt={sole.imageAlt || `${sole.title} - High-Precision Footwear Sole Manufacturer Pakistan`}
               style={{
                 maxHeight: '520px',
                 width: 'auto',
@@ -105,15 +105,29 @@ export default function SingleProjectArea({ sole }: Props) {
                   <h3 style={{ fontSize: '16px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.durometer}</h3>
                 </div>
 
-                <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Compounding Matrix</p>
-                  <h3 style={{ fontSize: '15px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.material}</h3>
-                </div>
+                {sole.soleTypeLabel ? (
+                  <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                    <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Sole Type</p>
+                    <h3 style={{ fontSize: '15px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.soleTypeLabel}</h3>
+                  </div>
+                ) : (
+                  <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                    <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Compounding Matrix</p>
+                    <h3 style={{ fontSize: '15px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.material}</h3>
+                  </div>
+                )}
 
-                <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
-                  <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Kinetic Rebound</p>
-                  <h3 style={{ fontSize: '16px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.energyRebound}</h3>
-                </div>
+                {sole.supportDesign ? (
+                  <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                    <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Support Design</p>
+                    <h3 style={{ fontSize: '15px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.supportDesign}</h3>
+                  </div>
+                ) : (
+                  <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
+                    <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Kinetic Rebound</p>
+                    <h3 style={{ fontSize: '16px', margin: 0, color: '#ffffff', fontWeight: 500 }}>{sole.energyRebound}</h3>
+                  </div>
+                )}
 
                 <div className="single-info mb-20" style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.06)', paddingBottom: '14px' }}>
                   <p style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.2px', color: '#c8a87a', marginBottom: '4px', fontWeight: 600 }}>Production MOQ</p>
@@ -126,13 +140,13 @@ export default function SingleProjectArea({ sole }: Props) {
                 </div>
 
                 <div style={{ paddingTop: '10px' }}>
-                  <a
+                  <Link
                     className="theme-btn"
-                    href="/#contact"
+                    href="/contact"
                     style={{ width: '100%', textAlign: 'center', display: 'block', padding: '12px 18px', fontSize: '13px' }}
                   >
-                    Inquire For This Sole
-                  </a>
+                    {sole.mainCtaText || 'Inquire For This Sole'}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -159,7 +173,7 @@ export default function SingleProjectArea({ sole }: Props) {
                 </span>
 
                 <h2 style={{ fontSize: '34px', lineHeight: '1.25', marginBottom: '22px', color: '#ffffff', fontWeight: 700 }}>
-                  {sole.title}
+                  {sole.mainH2 || sole.title}
                 </h2>
 
                 <p style={{ fontSize: '17px', lineHeight: '1.75', color: 'rgba(255,255,255,0.9)', marginBottom: '18px' }}>
@@ -172,7 +186,7 @@ export default function SingleProjectArea({ sole }: Props) {
 
                 {/* Key Engineering Features */}
                 <h4 style={{ fontSize: '18px', marginBottom: '18px', color: '#c8a87a', textTransform: 'uppercase', letterSpacing: '1.5px', fontWeight: 600 }}>
-                  Engineering Highlights:
+                  {sole.featuresHeading || 'Engineering Highlights:'}
                 </h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginBottom: '36px' }}>
                   {sole.features.map((feature, idx) => (
@@ -198,12 +212,12 @@ export default function SingleProjectArea({ sole }: Props) {
                 </div>
 
                 <div className="d-flex flex-wrap gap-3">
-                  <a className="theme-btn" href="/#contact">
-                    Request Mold Sample & RFQ <i className="ri-arrow-right-line"></i>
-                  </a>
-                  <a className="theme-btn theme-btn-two" href="/contact">
+                  <Link className="theme-btn" href="/contact">
+                    {sole.slug === 'medicated-sole' ? 'Request Quote for Medicated Shoe Soles' : (sole.mainCtaText || 'Request Mold Sample & RFQ')} <i className="ri-arrow-right-line"></i>
+                  </Link>
+                  <Link className="theme-btn theme-btn-two" href="/contact">
                     Request B2B Quote
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -212,7 +226,7 @@ export default function SingleProjectArea({ sole }: Props) {
           {/* Sole Gallery Section */}
           <div className="row pt-60">
             <div className="col-12 mb-30 text-center">
-              <h3 style={{ fontSize: '24px' }}>High-Precision Molding Gallery</h3>
+              <h3 style={{ fontSize: '24px' }}>{sole.galleryHeading || 'High-Precision Molding Gallery'}</h3>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '14px' }}>Click on any image to inspect high-resolution mold details</p>
             </div>
             {sole.gallery.map((imgUrl, i) => (
@@ -225,7 +239,7 @@ export default function SingleProjectArea({ sole }: Props) {
                   <div className="single-image wow fadeInUp delay-0-2s" style={{ borderRadius: '16px', overflow: 'hidden', background: '#09090b', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <img
                       src={imgUrl}
-                      alt={`${sole.shortTitle} gallery ${i + 1}`}
+                      alt={sole.galleryAlts?.[i] || `${sole.shortTitle} gallery ${i + 1}`}
                       style={{ width: '100%', height: '340px', objectFit: 'contain', display: 'block', padding: '20px' }}
                     />
                   </div>

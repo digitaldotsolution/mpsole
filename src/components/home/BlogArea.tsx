@@ -10,7 +10,7 @@ export default function BlogArea() {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title wow fadeInUp delay-0-2s">
-                <h2>4 Core Sole Formulations</h2>
+                <h2>Shoe Sole Manufacturing – 4 Core Sole Formulations</h2>
               </div>
             </div>
           </div>
@@ -22,7 +22,7 @@ export default function BlogArea() {
                   <Link href={`/sole-types/${sole.slug}`}>
                     <img
                       src={sole.image}
-                      alt={`${sole.title} - Shoe Sole Manufacturer Pakistan`}
+                      alt={sole.imageAlt || `${sole.title} - Shoe Sole Manufacturer Pakistan`}
                       style={{ width: '100%', height: 'auto', display: 'block', transition: 'transform 0.5s ease' }}
                     />
                   </Link>
@@ -38,7 +38,7 @@ export default function BlogArea() {
                   </h3>
                   <h2>
                     <Link className="link-decoration" href={`/sole-types/${sole.slug}`}>
-                      {sole.title}
+                      {sole.homeTitle || sole.title}
                     </Link>
                   </h2>
                   <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '1.6', margin: '14px 0 20px' }}>

@@ -9,24 +9,24 @@ interface FaqItem {
 
 const faqData: FaqItem[] = [
   {
-    question: "What sole polymers and formulations does MP Sole® manufacture?",
-    answer: "We manufacture a full range of high-performance compounds including High-Density Polyurethane (PU), Ultra-Lightweight Supercritical Phylon (EVA Injection), Dual-Density TPU, Natural & Vulcanized Rubber, and Eco-Hybrid Biodegradable compounds tailored for athletic runners, luxury dress shoes, rugged boots, and safety footwear."
+    question: "What types of shoe soles and materials does MP Sole® manufacture?",
+    answer: "MP Sole® manufactures high-quality footwear soles including P.U Gents soles, T.R soles, Ladies Jelly soles, and Medicated soles. As a shoe sole manufacturer in Pakistan, we develop sole formulations for formal shoes, casual footwear, sandals, comfort footwear, and other footwear applications based on production requirements."
   },
   {
     question: "What is the Minimum Order Quantity (MOQ) for production runs?",
-    answer: "For established designs in our master mold library, our standard MOQ is 500 pairs per colorway. For bespoke tooling and custom mold development projects, production pilot runs start from 1,000 to 2,500 pairs depending on sole geometry and material complexity."
+    answer: "Our minimum order quantity (MOQ) depends on the selected shoe sole design, material, color, and tooling requirements. For existing sole designs, production can start from 500 pairs per colorway. Custom shoe sole manufacturing and new mold development may require higher quantities depending on the design and production specifications."
   },
   {
     question: "How long does rapid prototype sampling and mold development take?",
-    answer: "Initial 3D CAD modeling and functional test samples are delivered within 5 to 7 business days. Full 5-axis CNC steel and high-tensile aluminum production molds are precision-machined, tested, and trial-pressed within 18 to 25 days."
+    answer: "Prototype sampling and custom shoe sole mold development timelines depend on the design, material, size range, and tooling complexity. Initial samples can typically be prepared within 5 to 7 business days, while complete production mold development may take approximately 18 to 25 days after design approval."
   },
   {
     question: "Can you match custom brand Pantone shades and Shore hardness durometers?",
-    answer: "Yes, our in-house chemical formulation lab matches exact Pantone/RAL shades with high UV-resistance to eliminate yellowing. We also calibrate exact Shore hardness durometers (from 35C ultra-cushioning rebound to 75A high-abrasion industrial grade)."
+    answer: "Yes. MP Sole® can develop custom shoe sole colors and Shore hardness specifications based on brand and footwear requirements. Pantone or reference colors can be matched during sole formulation, while hardness and flexibility can be adjusted according to the selected material, footwear type, and intended application."
   },
   {
     question: "Do you supply sole samples for fitment testing before bulk manufacturing?",
-    answer: "Absolutely. We supply comprehensive material swatch kits, compound density samples, and pre-production sample pairs molded to your custom shoe lasts so your design team can verify fitment, bonding, and flex performance."
+    answer: "Yes. MP Sole® can provide pre-production shoe sole samples for fitment, bonding, flexibility, and design evaluation before bulk manufacturing. Sample approval helps footwear brands and manufacturers verify the sole specifications before proceeding with a full production run."
   }
 ]
 
@@ -86,7 +86,7 @@ export default function FaqArea() {
                   marginBottom: '18px'
                 }}
               >
-                Got Questions? We Have Answers.
+                Shoe Sole Manufacturing FAQs
               </h2>
 
               <p 
@@ -109,7 +109,7 @@ export default function FaqArea() {
                 }}
               >
                 <h5 style={{ color: '#ffffff', fontSize: '17px', fontWeight: 600, marginBottom: '8px' }}>
-                  Need Custom Specifications?
+                  Need Custom Shoe Sole Specifications?
                 </h5>
                 <p style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px', lineHeight: '1.6', marginBottom: '18px' }}>
                   Our footwear engineering team is available to review your 3D CAD files, lasts, and custom durometer requirements.

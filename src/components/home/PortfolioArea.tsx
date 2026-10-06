@@ -194,7 +194,7 @@ export default function PortfolioArea() {
               }}
             >
               <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#25D366', display: 'inline-block' }}></span>
-              Factory Floor In Action
+              Shoe Sole Factory in Karachi – Production in Action
             </div>
             <h2 
               style={{

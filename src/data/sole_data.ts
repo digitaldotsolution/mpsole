@@ -4,17 +4,26 @@ export interface SoleType {
   category: string;
   shortTitle: string;
   title: string;
+  mainH2?: string;
+  homeTitle?: string;
+  imageAlt?: string;
   specs: string;
   durometer: string;
   material: string;
   energyRebound: string;
   moq: string;
   leadTime: string;
+  soleTypeLabel?: string;
+  supportDesign?: string;
   desc: string;
   detailedDesc: string;
+  featuresHeading?: string;
   features: string[];
   image: string;
   gallery: string[];
+  galleryHeading?: string;
+  galleryAlts?: string[];
+  mainCtaText?: string;
 }
 
 export const SOLE_TYPES_DATA: SoleType[] = [
@@ -23,19 +32,23 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     slug: 'pu-sole-gents',
     category: "MEN'S FORMAL & CASUAL",
     shortTitle: 'P.U Sole Gents',
-    title: 'P.U Sole Gents',
+    title: 'P.U Gents Sole',
+    homeTitle: 'P.U Gents Sole Manufacturer',
+    mainH2: 'P.U Gents Soles for Men’s Formal & Casual Shoes',
+    imageAlt: 'P.U Gents Shoe Sole Manufacturer in Pakistan - MP Sole',
     specs: 'Shore 50-55A • Micro-Cellular P.U • Anti-Hydrolysis',
     durometer: 'Shore 50-55A (Lightweight Resilience)',
     material: 'High-Density Liquid Polyurethane (P.U) Injection',
     energyRebound: '75% Comfort Shock Absorption',
     moq: '300 - 500 Pairs (Flexible for Trial Orders)',
     leadTime: '7-12 Days Tooling / 15-20 Days Production',
-    desc: "Engineered by Pakistan's premier shoe sole manufacturer specifically for men's executive dress shoes, daily formal footwear, and premium leather boots. Formulated with high-grade micro-cellular polyurethane (P.U) to deliver featherlight weight, exceptional flex resistance, and zero bottom cracking across continuous heavy use.",
-    detailedDesc: "Our Gents P.U Sole formulation balances structural firmness with all-day foot support. Using automated low-pressure and high-pressure liquid P.U injection machines in our Karachi facility, the compound forms a dense outer skin that resists abrasion while maintaining an air-cushioned micro-cellular inner core. Enhanced with premium anti-hydrolysis additives to withstand humid climates and prevent sole crumble, guaranteeing over 250,000 continuous flex cycles for footwear brands and wholesale buyers.",
+    desc: 'MP Sole® manufactures P.U Gents shoe soles in Pakistan for men’s executive dress shoes, formal footwear, casual shoes, and leather boots. Our micro-cellular polyurethane (P.U) sole formulation is engineered for lightweight comfort, flexibility, abrasion resistance, and reliable performance in everyday footwear production.',
+    detailedDesc: 'Our P.U Gents sole formulation balances structural support, flexibility, and all-day comfort. Manufactured at our shoe sole factory in Karachi using polyurethane injection molding, each sole is developed with an abrasion-resistant outer surface and lightweight micro-cellular structure. Anti-hydrolysis formulation helps improve durability in humid conditions, making these P.U soles suitable for footwear brands, shoe manufacturers, and wholesale buyers in Pakistan.',
+    featuresHeading: 'P.U Gents Sole Features & Manufacturing Highlights',
     features: [
       'High-Density Micro-Cellular Polyurethane (P.U) Construction',
       'Advanced Anti-Hydrolysis Formula Preventing Material Decay & Crumble',
-      'Superior Abrasion Resistance for Men Formal & Casual Shoes',
+      'Superior Abrasion Resistance for Men’s Formal & Casual Shoes',
       'Smooth Heel Transition with Pre-Engineered Stitching Welts'
     ],
     image: '/assets/images/soles/sole-pu-gents-1.webp',
@@ -45,6 +58,14 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       '/assets/images/soles/sole-pu-gents-3.webp',
       '/assets/images/soles/sole-pu-gents-4.webp',
     ],
+    galleryHeading: 'P.U Gents Sole Manufacturing Gallery',
+    galleryAlts: [
+      'P.U Gents shoe sole manufacturing - MP Sole Pakistan',
+      'P.U Gents shoe sole manufacturing - MP Sole Pakistan',
+      'P.U Gents shoe sole manufacturing - MP Sole Pakistan',
+      'P.U Gents shoe sole manufacturing - MP Sole Pakistan',
+    ],
+    mainCtaText: 'Inquire For This Sole'
   },
   {
     id: 2,
@@ -52,14 +73,18 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     category: "WOMEN'S FASHION & SANDALS",
     shortTitle: 'Ladies Jelly Sole',
     title: 'Ladies Jelly Sole',
+    homeTitle: 'Ladies Jelly Sole Manufacturer',
+    mainH2: 'Ladies Jelly Soles for Women’s Sandals & Fashion Footwear',
+    imageAlt: 'Ladies Jelly Sole Manufacturer in Pakistan - MP Sole',
     specs: 'Shore 60A • Crystal Transparent • Ultra-Flexible',
     durometer: 'Shore 60A (Supple Fashion Flex)',
     material: 'Virgin Transparent PVC / Thermoplastic Jelly Compound',
     energyRebound: '68% Elastic Return',
     moq: '300 - 500 Pairs (Custom Colors Available)',
     leadTime: '7-10 Days Tooling / 12-15 Days Production',
-    desc: "Manufactured for trendy women's sandals, elegant flats, and chic fashion footwear by MP Sole® Pakistan. Features crystal-clear transparency, glossy finish, and high-tensile elasticity that flexes naturally with every step without whitening or stiffness.",
-    detailedDesc: "The Ladies Jelly Sole line offers unmatched clarity and color versatility for footwear brands and shoe factories. Molded in Karachi from non-toxic, virgin-grade clear thermoplastic compound, it allows custom tinting in smoky black, pastel hues, or glitter infusion. The slip-resistant micro-tread pattern provides secure grip on smooth tiles, while its soft tactile hand feel ensures blister-free all-day wear.",
+    desc: 'MP Sole® manufactures Ladies Jelly soles in Pakistan for women’s sandals, flats, slippers, and fashion footwear. Our transparent jelly sole formulation combines flexibility, a smooth glossy finish, and durable thermoplastic material for footwear brands, manufacturers, and wholesale buyers.',
+    detailedDesc: 'Our Ladies Jelly soles are manufactured at our shoe sole factory in Karachi using transparent thermoplastic compounds suitable for women’s footwear production. Custom colors, transparent finishes, smoky shades, pastel tones, and glitter effects can be developed according to brand requirements. The flexible construction and micro-tread design provide comfort and grip for sandals, flats, and other fashion footwear.',
+    featuresHeading: 'Ladies Jelly Sole Features & Manufacturing Highlights',
     features: [
       'Optical-Grade Crystal Transparency with UV Yellowing Inhibitors',
       'Ultra-Soft Elasticity that Bends 180° Without Creasing or Whitening',
@@ -71,6 +96,12 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       '/assets/images/soles/sole-ladies-jelly-1.webp',
       '/assets/images/soles/sole-ladies-jelly-2.webp',
     ],
+    galleryHeading: 'Ladies Jelly Sole Manufacturing Gallery',
+    galleryAlts: [
+      'Transparent Ladies Jelly Sole by MP Sole Pakistan',
+      'Women’s Jelly Shoe Sole Manufacturing in Karachi'
+    ],
+    mainCtaText: 'Request Quote for Ladies Jelly Soles'
   },
   {
     id: 3,
@@ -78,19 +109,23 @@ export const SOLE_TYPES_DATA: SoleType[] = [
     category: 'CASUAL, ATHLETIC & UTILITY',
     shortTitle: 'T.R Sole',
     title: 'T.R Sole',
+    homeTitle: 'T.R Sole Manufacturer',
+    mainH2: 'TR Soles for Casual, Athletic & Utility Footwear',
+    imageAlt: 'TR Shoe Sole Manufacturer in Pakistan - MP Sole',
     specs: 'Shore 62A • High-Traction TR • Extreme Cold Resistant',
     durometer: 'Shore 62A (High-Grip Toughness)',
     material: 'Premium Thermoplastic Rubber (TR) Compound',
     energyRebound: '72% Kinetic Impact Absorption',
     moq: '300 - 500 Pairs (Custom Logos / Sizes)',
     leadTime: '10-14 Days Tooling / 15-20 Days Production',
-    desc: 'The industry benchmark for durable sneakers, rugged casual shoes, and outdoor boots in Pakistan. Thermoplastic Rubber (TR) combines the superior grip and abrasion resilience of rubber with the injection efficiency of thermoplastics for maximum longevity.',
-    detailedDesc: 'Our T.R Sole formulation is engineered for shoe brands demanding high abrasion performance and dependable grip across extreme temperatures (-20°C to +50°C). Unlike conventional PVC soles, TR maintains flexible traction without freezing stiff in winter or turning gummy in summer heat. Manufactured with precision in Pakistan, it easily bonds with standard footwear adhesives, offering deep tread definition, sharp mold edging, and dual-tone color injection.',
+    desc: 'MP Sole® manufactures TR shoe soles in Pakistan for sneakers, casual shoes, athletic footwear, utility shoes, and outdoor boots. Our Thermoplastic Rubber (TR) sole formulation combines flexibility, grip, and abrasion resistance with efficient injection molding for durable footwear production.',
+    detailedDesc: 'Our TR sole formulation is developed for footwear brands and shoe manufacturers requiring durable, flexible, and high-traction outsoles. Manufactured at our shoe sole factory in Karachi, Pakistan, TR soles provide strong abrasion resistance, defined tread patterns, reliable footwear bonding, and custom color options. They are suitable for casual shoes, sneakers, utility footwear, and outdoor applications where grip and long-term durability are important.',
+    featuresHeading: 'TR Sole Features & Manufacturing Highlights',
     features: [
       'High-Friction Slip Resistance on Wet, Oily & Rough Surfaces',
-      'Exceptional Low-Temperature Flexibility (-20°C Cold Crack Proof)',
+      'Flexible TR Compound Designed for Low-Temperature Performance',
       'Dual-Color and Dual-Density Injection Molding Ready',
-      'Low DIN Abrasion Loss < 110 mm³ for Extended Sole Lifespan'
+      'High Abrasion Resistance for Extended Sole Durability'
     ],
     image: '/assets/images/soles/sole-tr-1.webp',
     gallery: [
@@ -99,26 +134,41 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       '/assets/images/soles/sole-tr-3.webp',
       '/assets/images/soles/sole-tr-4.webp',
     ],
+    galleryHeading: 'TR Shoe Sole Manufacturing Gallery',
+    galleryAlts: [
+      'TR Shoe Sole by MP Sole Pakistan',
+      'Thermoplastic Rubber Sole Tread Design',
+      'TR Sole Manufacturing in Karachi Pakistan',
+      'TR Outsole for Casual & Athletic Footwear'
+    ],
+    mainCtaText: 'Request Quote for TR Shoe Soles'
   },
   {
     id: 4,
     slug: 'medicated-sole',
-    category: 'ORTHOPEDIC & COMFORT CARE',
+    category: 'ORTHOPEDIC & COMFORT FOOTWEAR',
     shortTitle: 'Medicated Sole',
-    title: 'Medicated Sole',
-    specs: 'Shore 35-40C • Anatomical Arch Support • Heel Shock Cup',
-    durometer: 'Shore 35-40C (Ultra-Plush Therapeutic Rebound)',
+    title: 'Medicated & Orthopedic Soles',
+    homeTitle: 'Medicated & Orthopedic Sole Manufacturer',
+    mainH2: 'Medicated & Orthopedic Soles for Comfort Footwear',
+    imageAlt: 'Medicated Shoe Sole Manufacturer in Pakistan - MP Sole',
+    specs: 'Shore 35-40C • Anatomical Arch Support • Heel Cushioning',
+    durometer: 'Shore 35-40C (Comfort Cushioning)',
+    soleTypeLabel: 'Medicated / Orthopedic Comfort Sole',
+    supportDesign: 'Anatomical Arch Support & Heel Cushioning',
     material: 'Bio-Engineered Memory Polymer & Shock-Absorbing EVA/PU',
     energyRebound: '85% Peak Shock Redistribution',
-    moq: '200 - 300 Pairs (Wholesale & Bulk Friendly)',
-    leadTime: '7-10 Days Tooling / 12-15 Days Production',
-    desc: 'Engineered by MP Sole® Pakistan specifically for therapeutic footwear, diabetic care, plantar fasciitis relief, and medical professionals on their feet all day. Features biomechanically tuned anatomical arch support, deep heel cupping, and pressure-dispersing cushioning.',
-    detailedDesc: 'The Medicated Sole formulation is crafted to minimize joint strain, plantar stress, and lumbar fatigue. Featuring calibrated dual-zone durometers, it combines an ultra-soft shock-dispersing heel cavity with a rigid midfoot torsional shank that guides proper walking gait. Clinically approved for diabetic footwear and orthopedic doctor-recommended shoes, it absorbs up to 85% of ground strike shock for wholesale shoe manufacturers.',
+    moq: '300 - 500 Pairs (Custom Requirements Available)',
+    leadTime: 'Based on Design & Production Requirements',
+    desc: 'MP Sole® manufactures Medicated shoe soles in Pakistan for orthopedic, comfort, and supportive footwear applications. Our Medicated soles are designed with anatomical arch support, heel cushioning, and pressure-distributing structures to provide enhanced underfoot comfort for footwear brands, manufacturers, and wholesale buyers.',
+    detailedDesc: 'Manufactured at our shoe sole factory in Karachi, MP Sole® Medicated soles combine supportive sole geometry with cushioning and flexible construction for comfort-focused footwear. Custom sole designs, sizes, hardness specifications, and mold development can be produced according to footwear brand and manufacturing requirements.',
+    featuresHeading: 'Medicated Sole Features & Manufacturing Highlights',
     features: [
-      'Biomechanical Anatomical Arch Cradle & Deep Heel Shock Cup',
-      'Ultra-Soft Therapeutic Foam Rebound Reducing Knee & Joint Stress',
-      'Pressure-Relief Metatarsal Zone for Diabetic & Orthopedic Care',
-      'Broad Stable Outsole Perimeter Base to Prevent Ankle Roll'
+      'Anatomical Arch Support for Comfort-Focused Footwear',
+      'Deep Heel Cushioning & Supportive Sole Geometry',
+      'Flexible Construction for Everyday Comfort Footwear',
+      'Custom Hardness, Sizes & Sole Design Options',
+      'Suitable for Orthopedic & Supportive Footwear Applications'
     ],
     image: '/assets/images/soles/sole-medicated-1.webp',
     gallery: [
@@ -127,5 +177,13 @@ export const SOLE_TYPES_DATA: SoleType[] = [
       '/assets/images/soles/sole-medicated-3.webp',
       '/assets/images/soles/sole-medicated-4.webp',
     ],
+    galleryHeading: 'Medicated Shoe Sole Manufacturing Gallery',
+    galleryAlts: [
+      'Medicated Shoe Sole Manufacturer in Pakistan - MP Sole',
+      'Medicated Sole Arch Support Design - MP Sole Pakistan',
+      'Orthopedic Footwear Sole Production Karachi',
+      'Comfort Footwear Sole Cushioning - MP Sole'
+    ],
+    mainCtaText: 'Request Quote for Medicated Shoe Soles'
   },
 ];

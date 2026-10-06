@@ -92,7 +92,7 @@ export default function StickySoleTypesArea() {
                 letterSpacing: '0.5px'
               }}>
                 <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
-                  Our Manufacturing Journey (1990 – Present)
+                  Our Shoe Sole Manufacturing Journey (1990 – Present)
                 </span>
               </h2>
             </div>

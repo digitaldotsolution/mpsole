@@ -31,12 +31,12 @@ export default function AboutArea() {
           <div className="row">
 
             <div className="col-lg-3 col-sm-3">
-              <h2 className="about-pre-title" style={{ marginTop: '8px' }}>About Us</h2>
+              <h2 className="about-pre-title" style={{ marginTop: '8px' }}>About MP Sole® – Shoe Sole Manufacturer in Karachi</h2>
             </div>
             <div className="col-lg-9 col-sm-9">
               <div className="about-content-part wow fadeInUp delay-0-2s">
                 <p style={{ fontSize: 'clamp(17px, 1.25vw, 20px)', lineHeight: '1.65' }}>
-                  As an industry-leading <strong>shoe sole manufacturer in Pakistan</strong> established in 1990, MP Sole® specializes in high-precision footwear sole compounding, custom mold tooling, and automated injection molding. From our advanced factory in Karachi, we engineer and supply durable PU, TR, Ladies Jelly, and Orthopedic Medicated soles to footwear brands across Pakistan and worldwide.
+                  Established in 1990, MP Sole® is a shoe sole manufacturer in Pakistan specializing in footwear sole manufacturing, custom mold tooling, polymer compounding, and automated injection molding. From our shoe sole factory in Karachi, we manufacture and supply PU soles, TR soles, Ladies Jelly soles, and Medicated soles for footwear brands, manufacturers, and wholesale buyers across Pakistan and international markets.
                 </p>
               </div>
             </div>

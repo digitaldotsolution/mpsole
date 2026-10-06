@@ -95,7 +95,7 @@ export default function ContactArea() {
           <div className="row">
             <div className="col-xl-12 col-lg-12">
               <div className="section-title section-black-title wow fadeInUp delay-0-2s">
-                <h2>Request a Production Run — Shoe Sole Supplier Pakistan</h2>
+                <h2>Request a Production Quote from a Shoe Sole Supplier in Pakistan</h2>
               </div>
             </div>
           </div>
@@ -127,12 +127,12 @@ export default function ContactArea() {
                   <span className="circle-btn">
                     <i className="ri-checkbox-circle-line"></i>
                   </span>
-                  <h2>Sole Supply & Manufacturing:</h2>
+                  <h2>Shoe Sole Supply &amp; Manufacturing:</h2>
                   <p style={{ lineHeight: '1.5' }}>
-                    <strong>Sole Manufacturer & Supplier</strong><br />
+                    <strong>Shoe Sole Manufacturer &amp; Wholesale Supplier</strong><br />
                     <span style={{ fontSize: '14px', color: '#888888' }}>
                       Quality Soles • Latest Designs<br />
-                      Wholesale & Retail Available
+                      Wholesale &amp; Retail Available
                     </span>
                   </p>
                 </div>

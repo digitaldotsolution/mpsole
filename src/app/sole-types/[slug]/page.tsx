@@ -22,7 +22,6 @@ export function generateStaticParams() {
 
 const SEO_H1_MAP: Record<string, string> = {
   'pu-sole-gents': 'P.U Gents Shoe Sole Manufacturer in Pakistan',
-  'pio-sole-gents': 'P.U Gents Shoe Sole Manufacturer in Pakistan',
   'ladies-jelly-sole': 'Ladies Jelly Sole Manufacturer in Pakistan',
   'tr-sole': 'TR Shoe Sole Manufacturer in Pakistan',
   'medicated-sole': 'Medicated Shoe Sole Manufacturer in Pakistan',
@@ -55,10 +54,75 @@ export default function SoleTypePage({ params }: PageProps) {
   }
 
   const pageH1 = SEO_H1_MAP[sole.slug] || sole.shortTitle;
+  const canonicalUrl = `https://mpsolemanufacture.com/sole-types/${sole.slug}`;
+  const primaryImageUrl = `https://mpsolemanufacture.com${sole.image}`;
+
+  const schemaJson = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${canonicalUrl}#product`,
+        "name": sole.title,
+        "url": canonicalUrl,
+        "image": [primaryImageUrl],
+        "description": sole.desc,
+        "brand": {
+          "@type": "Brand",
+          "name": "MP Sole®"
+        },
+        "manufacturer": {
+          "@id": "https://mpsolemanufacture.com/#organization"
+        },
+        "material": sole.material,
+        "category": "Footwear Shoe Soles"
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        "url": canonicalUrl,
+        "name": `${pageH1} | MP Sole®`,
+        "isPartOf": {
+          "@id": "https://mpsolemanufacture.com/#website"
+        },
+        "mainEntity": {
+          "@id": `${canonicalUrl}#product`
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://mpsolemanufacture.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Sole Types",
+            "item": "https://mpsolemanufacture.com/sole-types"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": sole.shortTitle,
+            "item": canonicalUrl
+          }
+        ]
+      }
+    ]
+  };
 
   return (
     <Wrapper>
       <HeaderOne />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}
+      />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
@@ -75,3 +139,4 @@ export default function SoleTypePage({ params }: PageProps) {
     </Wrapper>
   );
 }
+

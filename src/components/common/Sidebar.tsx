@@ -37,7 +37,7 @@ export default function Sidebar({ open, setOpen }: any) {
               </div>
               <div className="sidebar__social" style={{ display: 'flex', gap: '12px' }}>
                 <a 
-                  href="https://www.facebook.com/mpsolemaufacture" 
+                  href="https://www.facebook.com/p/MP-Sole-manufacture-61594053068516/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   title="Facebook"

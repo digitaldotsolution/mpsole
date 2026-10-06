@@ -24,10 +24,11 @@ const menu_data: DataType[] = [
 	},
 	{
 		id: 4,
-		title: "Sole Manufacture",
-		link: "/sole-types/pu-sole-gents",
+		title: "Sole Types",
+		link: "/sole-types",
 		has_dropdown: true,
 		sub_menus: [
+			{ link: "/sole-types", title: "All Sole Types" },
 			{ link: "/sole-types/pu-sole-gents", title: "P.U Sole Gents" },
 			{ link: "/sole-types/ladies-jelly-sole", title: "Ladies Jelly Sole" },
 			{ link: "/sole-types/tr-sole", title: "T.R Sole" },
